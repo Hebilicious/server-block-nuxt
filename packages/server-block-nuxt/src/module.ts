@@ -1,7 +1,7 @@
 import { addImports, addPlugin, addTemplate, createResolver, defineNuxtModule, useLogger } from "@nuxt/kit"
 import { defu } from "defu"
 
-const NAME = "my-module"
+const NAME = "server-block-nuxt"
 
 declare module "@nuxt/schema" {
   interface PublicRuntimeConfig {

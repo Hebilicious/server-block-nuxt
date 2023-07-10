@@ -75,7 +75,7 @@ importers:
         specifier: 1.0.0-beta.3
         version: 1.0.0-beta.3(@algolia/client-search@4.17.2)(@types/node@18.16.18)(search-insights@2.6.0)
 
-  packages/my-module:
+  packages/server-block-nuxt:
     dependencies:
       '@nuxt/kit':
         specifier: 3.6.1

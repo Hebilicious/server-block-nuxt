@@ -1,3 +1,3 @@
 export default defineNuxtConfig({
-  modules: ["../../../packages/my-module/src/module.ts"]
+  modules: ["../../../packages/server-block-nuxt/src/module.ts"]
 })

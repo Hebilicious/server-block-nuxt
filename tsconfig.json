@@ -1,10 +1,10 @@
 {
-  "extends": "./packages/my-module/.nuxt/tsconfig.json",
+  "extends": "./packages/server-block-nuxt/.nuxt/tsconfig.json",
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "#imports": ["./packages/my-module/node_modules/nuxt/app.d.ts"],
-      "#app": ["./packages/my-module/node_modules/nuxt/dist/app"]
+      "#imports": ["./packages/server-block-nuxt/node_modules/nuxt/app.d.ts"],
+      "#app": ["./packages/server-block-nuxt/node_modules/nuxt/dist/app"]
     }
   },
   "exclude": [
