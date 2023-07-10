@@ -1,0 +1,18 @@
+{
+  "extends": "./packages/my-module/.nuxt/tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "#imports": ["./packages/my-module/node_modules/nuxt/app.d.ts"],
+      "#app": ["./packages/my-module/node_modules/nuxt/dist/app"]
+    }
+  },
+  "exclude": [
+    "**/node_modules",
+    "**/dist",
+    "**/playground",
+    "**/playgrounds",
+    "**/docs",
+    "**/test/fixtures/**"
+  ]
+}
