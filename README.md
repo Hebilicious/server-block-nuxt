@@ -1,16 +1,14 @@
 # ⚗️ Server Block Nuxt
 
 [![CI](https://github.com/Hebilicious/server-block-nuxt/actions/workflows/ci.yaml/badge.svg)](https://github.com/Hebilicious/server-block-nuxt/actions/workflows/ci.yaml)
-[![npm version](https://badge.fury.io/js/@hebilicious%2Fauthjs-nuxt.svg)](https://badge.fury.io/js/@hebilicious%2Fauthjs-nuxt)
+[![npm version](https://badge.fury.io/js/@hebilicious%2Fserver-block-nuxt.svg)](https://badge.fury.io/js/@hebilicious%2Fserver-block-nuxt)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 🚀 Welcome to __Server Block Nuxt__!  
 
-This is a Nuxt Module that allows you to use the <server></server> syntax.
-
-## ⚠️ Disclaimer
-
 _🧪 This module is experimental._
+Nuxt Module that allows you to use the `<server lang="ts"></server>` blocks in your pages components.
+You can think of server block as a convenient way to write API handlers in your pages components.
 
 ## 📦 Install
 
@@ -35,8 +33,9 @@ The volar extension will be automatically installed by the nuxt module.
 
 ## 📖 Usage
 
-*Server blocks are only available in pages components.*
-*You can't use default exports in server blocks.*
+- *Server blocks are only available in pages components.*
+
+- *You can't use default exports in server blocks.*
 
 Add a server block in a pages component :
 
@@ -57,9 +56,11 @@ const { data } = useFetch("/api/message")
 </template>
 ```
 
-This will generate 2 handlers in `server/.generated/api` : 
+This will generate 2 handlers in `server/.generated/api` :
 
 - GET : `server/.generated/api/message.get.ts`
 - POST : `server/.generated/api/message.post.ts`
+
+All HTTP methods are supported.
 
 A `.gitignore` file will be generated for you. Do not commit the generated files in your repository.
