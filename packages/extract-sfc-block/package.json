@@ -1,13 +1,14 @@
 {
   "name": "@hebilicious/extract-sfc-block",
   "type": "module",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "author": {
     "name": "Hebilicious",
     "email": "xsh4k3@gmail.com",
     "url": "https://twitter.com/its_hebilicious"
   },
   "license": "MIT",
+  "repository": "Hebilicious/server-block-nuxt",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
