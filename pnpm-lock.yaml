@@ -118,14 +118,14 @@ importers:
         specifier: ^0.2.9
         version: 0.2.9
       nuxt:
-        specifier: latest
+        specifier: '*'
         version: 3.6.2(@types/node@18.16.18)(eslint@8.43.0)(rollup@3.23.0)(typescript@5.1.6)
       vite:
         specifier: '*'
         version: 4.3.5(@types/node@18.16.18)
     devDependencies:
       '@hebilicious/sfc-server-volar':
-        specifier: workspace:^
+        specifier: latest
         version: link:../sfc-server-volar
       '@nuxt/module-builder':
         specifier: ^0.4.0
