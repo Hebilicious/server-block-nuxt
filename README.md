@@ -63,7 +63,9 @@ This will generate 2 handlers in `server/.generated/api` :
 
 All HTTP methods are supported.
 
-You can override the default destination  :
+### Custom route
+
+You can override the default route convention with the `path` attribute  :
 
 ```html
 <server lang="ts" path="/not-api/this/is/cool">
@@ -84,3 +86,9 @@ const { data } = useFetch("/not-api/this/is/cool")
 ```
 
 A `.gitignore` file will be generated for you. Do not commit the generated files in your repository.
+
+## TODO
+
+- [ ] Support multiple server blocks in a single file
+- [ ] Integrates with form-actions & loaders
+- [ ] Add useFetch typings

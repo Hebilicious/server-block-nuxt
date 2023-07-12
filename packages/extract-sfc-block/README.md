@@ -19,7 +19,7 @@ const VitePlugin = ExtractSFCBlock({
   output: "server/.generated", // This is relative to the vite config directory.
   sourceDir: "pages", // This is relative to the vite config directory.
   blockType: "server", // This will match <server></server> blocks.
-  defaultPath: "api" // This will be only be used if no path attribute is provided.
+  defaultPath: "api" // This will only be used if no path attribute is provided.
 })
 ```
 
@@ -63,7 +63,7 @@ const message = "Hello World!!!"
 
 ## TODO
 
-- [ ] Support multiple server blocks in a single file.
-- [ ] Refactor to unplugin.
+- [ ] Support multiple server blocks in a single file
+- [ ] Refactor to unplugin
 - [ ] Write tests
 - [ ] Write docs
