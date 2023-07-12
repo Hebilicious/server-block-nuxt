@@ -1,63 +1,90 @@
-import { addImports, addPlugin, addTemplate, createResolver, defineNuxtModule, useLogger } from "@nuxt/kit"
-import { defu } from "defu"
+import { existsSync, promises as fsp } from "node:fs"
 
-const NAME = "server-block-nuxt"
+import { addServerHandler, createResolver, defineNuxtModule, useNitro } from "@nuxt/kit"
+import ExtractSFCBlock from "@hebilicious/extract-sfc-block"
 
-declare module "@nuxt/schema" {
-  interface PublicRuntimeConfig {
-    [NAME]: Record<string, unknown>
-  }
-}
+import { loadFile } from "magicast"
+import { SupportedMethods, getRoute, logger, makePathShortener, writeHandlers } from "./runtime/utils"
+
+const name = "server-block"
+
+const serverOutput = "server/.generated/api" as const
 
 export default defineNuxtModule({
   meta: {
-    name: NAME,
-    configKey: NAME
+    name,
+    compatibility: {
+      nuxt: ">=3.0.0"
+    }
   },
-  setup(userOptions, nuxt) {
-    const logger = useLogger(NAME)
+  async setup(userOptions, nuxt) {
     const { resolve } = createResolver(import.meta.url)
+    const shortened = makePathShortener(nuxt.options.srcDir)
 
-    logger.info(`Adding ${NAME} module...`, userOptions)
+    logger.info(`Adding ${name} module...`)
 
-    // 1. Set up runtime configuration
-    const options = defu(nuxt.options.runtimeConfig.public[NAME], userOptions, {})
-    nuxt.options.runtimeConfig.public[NAME] = options
+    // 0. Create directories and .gitignore
+    const serverGeneratedDirectoryPath = resolve(nuxt.options.srcDir, "server/.generated")
+    if (!existsSync(serverGeneratedDirectoryPath)) await fsp.mkdir(serverGeneratedDirectoryPath)
+    await fsp.writeFile(`${serverGeneratedDirectoryPath}/.gitignore`, "*")
 
-    // 3. Add composables
-    addImports([{ name: "useSomething", from: resolve("./runtime/composables/useSomething") }])
+    // 1. Add Volar plugin
+    nuxt.options.typescript.tsConfig ||= {}
+    nuxt.options.typescript.tsConfig.vueCompilerOptions ||= {}
+    nuxt.options.typescript.tsConfig.vueCompilerOptions.plugins ||= []
+    nuxt.options.typescript.tsConfig.vueCompilerOptions.plugins.push("@hebilicious/sfc-server-volar")
 
-    // 4. Create virtual imports for server-side
-    // @todo Contribute an helper to nuxt/kit to handle this scenario like this
-    // addLibrary({name: "#auth", entry: "./runtime/lib", clientEntry: "./runtime/lib/client", serverEntry: "./runtime/lib/server"})
-
-    // These will be available only in the /server directory
-    nuxt.hook("nitro:config", (nitroConfig) => {
-      nitroConfig.alias = nitroConfig.alias || {}
-      nitroConfig.alias[`#${NAME}`] = resolve("./runtime/server")
+    // 2. Add vite extract-sfc-block plugin
+    nuxt.hook("vite:extendConfig", (config) => {
+      config.plugins ||= []
+      config.plugins.push(
+        ExtractSFCBlock({
+          output: serverOutput,
+          sourceDir: "pages",
+          blockType: "server"
+        })
+      )
     })
 
-    // These will be available outside of the /server directory
-    nuxt.options.alias[`#${NAME}`] = resolve("./runtime/client")
-
-    // 4. Add types
-    const filename = `types/${NAME}.d.ts`
-    addTemplate({
-      filename,
-      getContents: () => [
-        `declare module '#${NAME}' {`,
-        `  const hello: typeof import('${resolve("./runtime/server")}').hello`,
-        "}"
-      ].join("\n")
+    // 3.Watch directories, split handlers and add them to Nitro/Nuxt
+    nuxt.hook("builder:watch", async (event, path) => {
+      try {
+        if (!existsSync(path)) return // Return early if the path doesn't exist.
+        if (path.includes(serverOutput)) {
+          if (!path.endsWith(".ts")) return // skip non-ts files
+          if (SupportedMethods.map(m => `.${m.toLowerCase()}.ts`).some(s => path.includes(s))) return // skip .[method].ts
+          logger.info(`[update] '@${event}'`, shortened(path))
+          const route = getRoute(path) // This will throw if there's no generated handlers.
+          const file = await loadFile(path)
+          if (file) {
+            logger.info(`[update]: Adding new handler(s) @${route}`)
+            const handlers = await writeHandlers(file, path)
+            for (const handler of handlers) {
+              logger.success(`[update] Wrote ${handler.method} handler @${handler.route} : ${shortened(handler.handler)}`)
+              if (!useNitro().scannedHandlers.some(h => h.handler === handler.handler)) {
+                useNitro().scannedHandlers.push({
+                  ...handler,
+                  lazy: true
+                })
+                logger.success(`[update] Nitro handler updated :  ${handler.route}`)
+              }
+              if (!nuxt.options.serverHandlers.some(h => h.handler === handler.handler)) {
+                addServerHandler({
+                  ...handler,
+                  lazy: true
+                })
+                logger.success(`[update] Nuxt handler updated : ${handler.route}`)
+              }
+            }
+          }
+          // logger.info("[update]: Handlers", nuxt.options.serverHandlers)
+        }
+      }
+      catch (error) {
+        logger.error(`error while handling '${event}'`, error)
+      }
     })
 
-    nuxt.hook("prepare:types", (options) => {
-      options.references.push({ path: resolve(nuxt.options.buildDir, filename) })
-    })
-
-    // 5. Add plugin & middleware
-    addPlugin(resolve("./runtime/plugin"))
-
-    logger.success(`Added ${NAME} module successfully.`)
+    logger.success(`Added ${name} module successfully.`)
   }
 })

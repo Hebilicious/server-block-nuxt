@@ -21,8 +21,7 @@
         "types": "./dist/module.d.mts"
       },
       "default": "./dist/module.mjs"
-    },
-    "./*": "./*"
+    }
   },
   "main": "./dist/module.cjs",
   "module": "./dist/module.mjs",
@@ -43,15 +42,18 @@
     "dev": "nuxi dev"
   },
   "peerDependencies": {
+    "@hebilicious/sfc-server-volar": "latest",
     "nuxt": "latest",
     "vite": "*"
   },
   "dependencies": {
+    "@hebilicious/extract-sfc-block": "latest",
     "@nuxt/kit": "3.6.1",
     "defu": "^6.1.2"
   },
   "devDependencies": {
     "@nuxt/module-builder": "^0.4.0",
+    "esbuild": "^0.18.11",
     "h3": "^1.7.1"
   }
 }

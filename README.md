@@ -1,51 +1,65 @@
-# ⚗️ Nuxt Module Template
+# ⚗️ Server Block Nuxt
 
-[![CI](https://github.com/Hebilicious/authjs-nuxt/actions/workflows/ci.yaml/badge.svg)](https://github.com/Hebilicious/authjs-nuxt/actions/workflows/ci.yaml)
+[![CI](https://github.com/Hebilicious/server-block-nuxt/actions/workflows/ci.yaml/badge.svg)](https://github.com/Hebilicious/server-block-nuxt/actions/workflows/ci.yaml)
 [![npm version](https://badge.fury.io/js/@hebilicious%2Fauthjs-nuxt.svg)](https://badge.fury.io/js/@hebilicious%2Fauthjs-nuxt)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-🚀 Welcome to __Hebilicious Nuxt Module Starter Template__!  
+🚀 Welcome to __Server Block Nuxt__!  
 
-This is a Nuxt Module Repo Template Starter.
-It comes with a base module that you can use to start your own module.
-
-## Batteries Included
-
-- 📦 PNPM monorepo
-- 🏗️ Nuxt Module with `nuxt-build-module` and `unbuild`
-- 🏗 ESM/CJS valid package, with MTS and CTS declaration files.
-- 📝 Docs with vitepress
-- ✅ Tests with vitest
-- 🔨 Monorepo tasks with Turbo
-- 🔄 CI with Github Actions
-- 🚀 Trigger NPM release + changelog from CLI
-- 📏 Conventional commits
-- 🔄 Renovate config
+This is a Nuxt Module that allows you to use the <server></server> syntax.
 
 ## ⚠️ Disclaimer
 
-_🧪 This module is really unstable and is not recommended for production use. It is intended for those who want to experiment with the edge._
+_🧪 This module is experimental._
 
+## 📦 Install
 
-## 📦 Installation
-
-Use pnpm for development of your module :
+Install the module and the volar extension :
 
 ```bash
-pnpm i 
+npm i -D @hebilicious/server-block-nuxt @hebilicious/sfc-server-volar
 ```
 
+Add the module to your Nuxt config :
 
-## 📦 Contributing
+```ts
+export default defineNuxtConfig({
+  modules: [
+    "@hebilicious/server-block-nuxt"
+  ]
+})
+```
 
-Contributions, issues and feature requests are welcome!
+That's it !
+The volar extension will be automatically installed by the nuxt module.
 
-1. Fork this repo
+## 📖 Usage
 
-2. Install `node` and `pnpm` _Use `corepack enable && corepack prepare pnpm@latest --activate` to install pnpm easily_
+*Server blocks are only available in pages components.*
+*You can't use default exports in server blocks.*
 
-3. Use `pnpm i` at the mono-repo root.
+Add a server block in a pages component :
 
-4. Make modifications and follow conventional commits.
+```html
+<server lang="ts">
+const message = "Hello World!!!"
+const bye = "bye!"
+export const GET = defineEventHandler(() =>({ message }))
+export const POST = defineEventHandler(() =>({ message: bye }))
+</server>
 
-5. Open a PR 🚀🚀🚀
+<script setup lang="ts">
+const { data } = useFetch("/api/message")
+</script>
+
+<template>
+  <div> Hello Message, {{ data }} </div>
+</template>
+```
+
+This will generate 2 handlers in `server/.generated/api` : 
+
+- GET : `server/.generated/api/message.get.ts`
+- POST : `server/.generated/api/message.post.ts`
+
+A `.gitignore` file will be generated for you. Do not commit the generated files in your repository.
