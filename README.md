@@ -65,4 +65,32 @@ This will generate 2 handlers in `server/.generated/api` :
 
 All HTTP methods are supported.
 
+### Custom route
+
+You can override the default route convention with the `path` attribute  :
+
+```html
+<server lang="ts" path="/not-api/this/is/cool">
+export const GET = defineEventHandler((event) => {
+  return "We're here now."
+})
+</server>
+
+<script setup lang="ts">
+const { data } = useFetch("/not-api/this/is/cool")
+</script>
+
+<template>
+  <h1>Hello</h1>
+  <div> {{ data }} </div>
+</template>
+
+```
+
 A `.gitignore` file will be generated for you. Do not commit the generated files in your repository.
+
+## TODO
+
+- [ ] Support multiple server blocks in a single file
+- [ ] Integrates with form-actions & loaders
+- [ ] Add useFetch typings

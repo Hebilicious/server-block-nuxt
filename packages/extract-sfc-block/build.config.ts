@@ -3,9 +3,9 @@ import { defineBuildConfig } from "unbuild"
 export default defineBuildConfig({
   entries: ["src/index"],
   externals: [
-    "vite"
+    "vite",
+    "@vue/compiler-sfc"
     // "vue/compiler-sfc"
-    // "@vue/compiler-sfc"
     // "@volar/vue-language-core"
     // "@vue/shared"
     // "@vitejs/plugin-vue"

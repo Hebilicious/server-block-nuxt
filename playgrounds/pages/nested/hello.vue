@@ -1,11 +1,11 @@
-<server lang="ts">
+<server lang="ts" path="/not-api/this/is/cool">
 export const GET = defineEventHandler((event) => {
-        return "Hello World"
+  return "We're here now."
 })
 </server>
 
 <script setup lang="ts">
-const { data } = useFetch("/api/nested/hello")
+const { data } = useFetch("/not-api/this/is/cool")
 </script>
 
 <template>

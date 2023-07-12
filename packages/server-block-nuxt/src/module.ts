@@ -4,11 +4,12 @@ import { addServerHandler, createResolver, defineNuxtModule, useNitro } from "@n
 import ExtractSFCBlock from "@hebilicious/extract-sfc-block"
 
 import { loadFile } from "magicast"
+import type { NitroEventHandler } from "nitropack"
 import { SupportedMethods, getRoute, logger, makePathShortener, writeHandlers } from "./runtime/utils"
 
 const name = "server-block"
 
-const serverOutput = "server/.generated/api" as const
+const serverOutput = "server/.generated" as const
 
 export default defineNuxtModule({
   meta: {
@@ -41,12 +42,14 @@ export default defineNuxtModule({
         ExtractSFCBlock({
           output: serverOutput,
           sourceDir: "pages",
-          blockType: "server"
+          blockType: "server",
+          defaultPath: "api"
         })
       )
     })
 
     // 3.Watch directories, split handlers and add them to Nitro/Nuxt
+    const allHandlers = new Map<string, NitroEventHandler>()
     nuxt.hook("builder:watch", async (event, path) => {
       try {
         if (!existsSync(path)) return // Return early if the path doesn't exist.
@@ -61,23 +64,19 @@ export default defineNuxtModule({
             const handlers = await writeHandlers(file, path)
             for (const handler of handlers) {
               logger.success(`[update] Wrote ${handler.method} handler @${handler.route} : ${shortened(handler.handler)}`)
-              if (!useNitro().scannedHandlers.some(h => h.handler === handler.handler)) {
-                useNitro().scannedHandlers.push({
-                  ...handler,
-                  lazy: true
-                })
-                logger.success(`[update] Nitro handler updated :  ${handler.route}`)
-              }
+              allHandlers.set(handler.handler, handler)
               if (!nuxt.options.serverHandlers.some(h => h.handler === handler.handler)) {
-                addServerHandler({
-                  ...handler,
-                  lazy: true
-                })
+                addServerHandler({ ...handler, lazy: true })
                 logger.success(`[update] Nuxt handler updated : ${handler.route}`)
               }
             }
+            for (const [path, handler] of allHandlers.entries()) {
+              if (useNitro().scannedHandlers.find(h => h.handler === path)) continue
+              useNitro().scannedHandlers.push({ ...handler, lazy: true })
+            }
           }
-          // logger.info("[update]: Handlers", nuxt.options.serverHandlers)
+          logger.info("[update]: Nitro Handlers \n", useNitro().scannedHandlers.map(h => h.handler))
+          logger.info("[update]: Nuxt Handlers \n", nuxt.options.serverHandlers.map(h => h.handler))
         }
       }
       catch (error) {
