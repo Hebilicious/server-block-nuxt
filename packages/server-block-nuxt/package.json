@@ -1,7 +1,7 @@
 {
   "name": "@hebilicious/server-block-nuxt",
   "type": "module",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "author": {
     "name": "Hebilicious",
     "email": "xsh4k3@gmail.com",
@@ -42,8 +42,8 @@
     "dev": "nuxi dev"
   },
   "peerDependencies": {
-    "@hebilicious/sfc-server-volar": "latest",
-    "nuxt": "latest",
+    "@hebilicious/sfc-server-volar": "*",
+    "nuxt": "*",
     "vite": "*"
   },
   "dependencies": {
@@ -55,6 +55,7 @@
     "magicast": "^0.2.9"
   },
   "devDependencies": {
+    "@hebilicious/sfc-server-volar": "latest",
     "@nuxt/module-builder": "^0.4.0",
     "h3": "^1.7.1"
   }
