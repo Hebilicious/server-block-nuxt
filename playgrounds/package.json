@@ -8,6 +8,7 @@
     "preview": "nuxt preview"
   },
   "devDependencies": {
+    "@hebilicious/sfc-server-volar": "latest",
     "@nuxt/devtools": "^0.6.4",
     "nuxt": "latest"
   }
