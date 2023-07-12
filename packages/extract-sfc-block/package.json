@@ -1,0 +1,47 @@
+{
+  "name": "@hebilicious/extract-sfc-block",
+  "type": "module",
+  "version": "0.0.1",
+  "author": {
+    "name": "Hebilicious",
+    "email": "xsh4k3@gmail.com",
+    "url": "https://twitter.com/its_hebilicious"
+  },
+  "license": "MIT",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": {
+        "default": "./dist/index.cjs",
+        "types": "./dist/index.d.cts"
+      },
+      "import": {
+        "default": "./dist/index.mjs",
+        "types": "./dist/index.d.mts"
+      },
+      "default": "./dist/index.mjs"
+    }
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "*.d.ts",
+    "*.cjs",
+    "*.mjs"
+  ],
+  "scripts": {
+    "stub": "unbuild --stub",
+    "dts": "esno scripts/dts.ts",
+    "build": "pnpm run dts && unbuild"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.2.3",
+    "@vue/shared": "^3.3.4",
+    "consola": "^3.2.3",
+    "unplugin": "^1.3.2",
+    "vite": "^4.4.2",
+    "vue": "^3.3.4"
+  }
+}
