@@ -3,7 +3,7 @@ import { defineBuildConfig } from "unbuild"
 export default defineBuildConfig({
   entries: ["src/index"],
   externals: [
-    "@volar/vue-language-core"
+    "@vue/language-core"
   ],
   clean: true,
   declaration: true,

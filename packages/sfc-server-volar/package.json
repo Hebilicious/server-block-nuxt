@@ -38,6 +38,6 @@
     "build": "unbuild && pnpm run dts"
   },
   "devDependencies": {
-    "@volar/vue-language-core": "^1.6.5"
+    "@vue/language-core": "^1.8.4"
   }
 }

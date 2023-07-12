@@ -6,7 +6,7 @@ export default defineBuildConfig({
     "vite",
     "@vue/compiler-sfc"
     // "vue/compiler-sfc"
-    // "@volar/vue-language-core"
+    // "@vue/language-core"
     // "@vue/shared"
     // "@vitejs/plugin-vue"
     // "consola"
