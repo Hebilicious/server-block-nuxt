@@ -1,6 +1,7 @@
 import path from "node:path"
-import { createConsola } from "consola"
 import type { VueQuery } from "@vitejs/plugin-vue"
+
+import { createConsola } from "consola"
 import {
   parseVueRequest as _parseVueRequest
 } from "@vitejs/plugin-vue"

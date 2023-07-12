@@ -34,7 +34,7 @@
   "scripts": {
     "stub": "unbuild --stub",
     "dts": "esno scripts/dts.ts",
-    "build": "pnpm run dts && unbuild"
+    "build": "unbuild && pnpm run dts"
   },
   "devDependencies": {
     "@volar/vue-language-core": "^1.6.5"

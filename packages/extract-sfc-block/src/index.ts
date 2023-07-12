@@ -1,8 +1,9 @@
 import path from "node:path"
 import { existsSync, mkdirSync, writeFileSync } from "node:fs"
 
-import { type PluginOption, type ResolvedConfig } from "vite"
+import type { PluginOption, ResolvedConfig } from "vite"
 import type { SFCBlock } from "vue/compiler-sfc"
+
 import createCache from "./cache"
 import type { PluginConfig } from "./utils"
 import { GENERATED_TEXT, getExtractionInfo, logger, parseVueRequest, pluginName } from "./utils"

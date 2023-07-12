@@ -1,7 +1,8 @@
 /* eslint-disable import/no-duplicates */
 import fs from "node:fs"
 import { createRequire } from "node:module"
-import { type ResolvedConfig } from "vite"
+
+import type { ResolvedConfig } from "vite"
 import type * as _compiler from "vue/compiler-sfc"
 import type { SFCDescriptor } from "vue/compiler-sfc"
 
