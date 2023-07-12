@@ -57,6 +57,7 @@
   "devDependencies": {
     "@hebilicious/sfc-server-volar": "latest",
     "@nuxt/module-builder": "^0.4.0",
-    "h3": "^1.7.1"
+    "h3": "^1.7.1",
+    "nitropack": "^2.5.2"
   }
 }

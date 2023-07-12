@@ -18,11 +18,6 @@ export default function vueExtractSFCServer(pluginConfig: PluginConfig): PluginO
     configResolved(resolvedConfig) {
       // logger.info("Resolved config !")
       config = resolvedConfig
-      // Write a gitignore file in the output directory
-      // const directoryPath = path.resolve(config.root, pluginConfig.output)
-      // if (existsSync(directoryPath)) rmSync(directoryPath, { recursive: true, force: true })
-      // if (!existsSync(directoryPath)) mkdirSync(directoryPath)
-      // writeFileSync(path.resolve(directoryPath, ".gitignore"), "*")
     },
 
     buildStart() {
@@ -30,17 +25,11 @@ export default function vueExtractSFCServer(pluginConfig: PluginConfig): PluginO
       cache = createCache(config)
     },
     load(id) {
-      // if (!cache.isNestedComponent(id)) {
-      //   return
-      // }
       // Only match vue files
       const match = id.match(/^(.*)\/([^/]+)\.vue$/)
       if (!match) {
         return
       }
-      // logger.info("Loading vue", id)
-      // let filename = match[1]
-      // const component = match[2]
       let filename = id
       if (!filename.startsWith(config.root)) {
         filename = path.resolve(config.root, filename)
@@ -51,7 +40,7 @@ export default function vueExtractSFCServer(pluginConfig: PluginConfig): PluginO
       if (extractBlock) {
         logger.info(`Extracting block @ ${filename}`)
         // logger.info(extractBlock.content)
-        const { outputDirectory, outputPath } = getExtractionInfo(config.root, filename, pluginConfig, extractBlock.lang)
+        const { outputDirectory, outputPath } = getExtractionInfo(config.root, filename, pluginConfig, extractBlock)
         if (outputDirectory && !existsSync(outputDirectory)) mkdirSync(outputDirectory, { recursive: true })
         if (outputPath) {
           writeFileSync(outputPath, `${GENERATED_TEXT}${extractBlock.content}`)
@@ -82,7 +71,7 @@ export default function vueExtractSFCServer(pluginConfig: PluginConfig): PluginO
       const sfc = cache.getSFC(file)
       const extractBlock = sfc.customBlocks.find(findBlockType)
       if (extractBlock) {
-        const { outputPath } = getExtractionInfo(config.root, file, pluginConfig, extractBlock.lang)
+        const { outputPath } = getExtractionInfo(config.root, file, pluginConfig, extractBlock)
         if (outputPath) {
           const newSFC = cache.updateCodeSFC(file, await read())
           writeFileSync(outputPath, `${GENERATED_TEXT}${newSFC.customBlocks.find(findBlockType)?.content}`)
