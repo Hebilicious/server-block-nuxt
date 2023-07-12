@@ -10,6 +10,8 @@ _🧪 This module is experimental._
 Nuxt Module that allows you to use the `<server lang="ts"></server>` blocks in your pages components.
 You can think of server block as a convenient way to write API handlers in your pages components.
 
+<img width="1161" alt="image" src="https://github.com/Hebilicious/server-block-nuxt/assets/13395944/33d8278c-d919-48d6-b128-2d56c91f2bb0">
+
 ## 📦 Install
 
 Install the module and the volar extension :
