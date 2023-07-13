@@ -46,9 +46,9 @@ The volar extension will be automatically installed by the nuxt module.
 
 - *Server blocks are only available in pages components.*
 
-- *You can't use default exports in server blocks.*
+- *default exports are not available in server blocks. Use named exports.*
 
-Add a server block in a pages component :
+Add a server block in a page component :
 
 ```html
 <server lang="ts">
@@ -93,13 +93,27 @@ const { data } = useFetch("/not-api/this/is/cool")
   <h1>Hello</h1>
   <div> {{ data }} </div>
 </template>
-
 ```
 
+This will generate a get handler: `server/.generated/not-api/this/is/cool.get.ts`.
+
 A `.gitignore` file will be generated for you. Do not commit the generated files in your repository.
+
+
+## FAQ 
+
+**Why `<server>` and not `<script server>` ?**
+
+- `<script server>` causes issues with the current behaviour of additional script tags in SFCs (notably with import/exports)
+- `<server>` blocks are completely removed from the SFC and don't interfere with `<template>` or `<script>`, they create a clear boundary.
+- The syntax highlighting work in environments that uses the lang attribute. I would like github support too.
 
 ## TODO
 
 - [ ] Support multiple server blocks in a single file
 - [ ] Integrates with form-actions & loaders
 - [ ] Add useFetch typings
+
+## Contributing 
+
+Feedback, issues and PRs are welcomed.
