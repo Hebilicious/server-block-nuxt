@@ -7,10 +7,19 @@
 🚀 Welcome to __Server Block Nuxt__!  
 
 _🧪 This module is experimental._
-Nuxt Module that allows you to use the `<server lang="ts"></server>` blocks in your pages components.
+
+Nuxt Module that adds server block supports in your pages components.
+
+```html
+<server lang="ts"></server>
+<script lang="ts" setup></script>
+<template></template>
+<style></style>
+```
+
 You can think of server block as a convenient way to write API handlers in your pages components.
 
-<img width="1161" alt="image" src="https://github.com/Hebilicious/server-block-nuxt/assets/13395944/33d8278c-d919-48d6-b128-2d56c91f2bb0">
+<img width="1112" alt="image" src="https://github.com/Hebilicious/server-block-nuxt/assets/13395944/4051eefe-cd83-48cb-a08b-88c451988d10">
 
 ## 📦 Install
 
