@@ -33,6 +33,7 @@
     "*.mjs"
   ],
   "scripts": {
+    "stub": "unbuild --stub",
     "dts": "esno scripts/dts.ts",
     "readme": "esno scripts/readme.ts",
     "postbuild": "pnpm dts && pnpm readme",

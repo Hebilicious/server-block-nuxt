@@ -1,11 +1,11 @@
 import { existsSync, promises as fsp } from "node:fs"
 
-import { addServerHandler, createResolver, defineNuxtModule, useNitro } from "@nuxt/kit"
+import { addPlugin, addServerHandler, createResolver, defineNuxtModule, useNitro } from "@nuxt/kit"
 import ExtractSFCBlock from "@hebilicious/extract-sfc-block"
 
 import { loadFile } from "magicast"
 import type { NitroEventHandler } from "nitropack"
-import { SupportedMethods, getRoute, logger, makePathShortener, writeHandlers } from "./runtime/utils"
+import { SupportedMethods, getRoute, logger, makePathShortener, writeHandlers } from "./utils"
 
 const name = "server-block"
 
@@ -55,13 +55,14 @@ export default defineNuxtModule({
         if (!existsSync(path)) return // Return early if the path doesn't exist.
         if (path.includes(serverOutput)) {
           if (!path.endsWith(".ts")) return // skip non-ts files
+          if (path.includes("server/.generated/.loader")) return // skip files in .loader
           if (SupportedMethods.map(m => `.${m.toLowerCase()}.ts`).some(s => path.includes(s))) return // skip .[method].ts
           logger.info(`[update] '@${event}'`, shortened(path))
           const route = getRoute(path) // This will throw if there's no generated handlers.
           const file = await loadFile(path)
           if (file) {
             logger.info(`[update]: Adding new handler(s) @${route}`)
-            const handlers = await writeHandlers(file, path)
+            const handlers = await writeHandlers(file, path, serverGeneratedDirectoryPath)
             for (const handler of handlers) {
               logger.success(`[update] Wrote ${handler.method} handler @${handler.route} : ${shortened(handler.handler)}`)
               allHandlers.set(handler.handler, handler)
@@ -75,14 +76,17 @@ export default defineNuxtModule({
               useNitro().scannedHandlers.push({ ...handler, lazy: true })
             }
           }
-          logger.info("[update]: Nitro Handlers \n", useNitro().scannedHandlers.map(h => h.handler))
-          logger.info("[update]: Nuxt Handlers \n", nuxt.options.serverHandlers.map(h => h.handler))
+          // await useNuxt().hooks.callHookParallel("app:data:refresh") @todo find a way to refresh data here
+          logger.info("[update]: Nitro Handlers \n", useNitro().scannedHandlers.map(h => h.route))
+          logger.info("[update]: Nuxt Handlers \n", nuxt.options.serverHandlers.map(h => h.route))
         }
       }
       catch (error) {
         logger.error(`error while handling '${event}'`, error)
       }
     })
+
+    addPlugin(resolve("./runtime/plugin"))
 
     logger.success(`Added ${name} module successfully.`)
   }
