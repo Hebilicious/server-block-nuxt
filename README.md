@@ -99,8 +99,13 @@ This will generate a get handler: `server/.generated/not-api/this/is/cool.get.ts
 
 A `.gitignore` file will be generated for you. Do not commit the generated files in your repository.
 
+## Troubleshooting
 
-## FAQ 
+While developing your application, you might encounter a `Page Not Found` error while hitting your extracted server handlers.
+To fix this, you can delete the vite cache (usually in `node_modules/.cache/vite`). 
+If you need more help, feel free to open an issue.
+
+## FAQ
 
 **Why `<server>` and not `<script server>` ?**
 
@@ -118,6 +123,6 @@ You can combine this with another library such as https://github.com/Hebilicious
 - [x] Integrates with form-actions & loaders
 - [ ] Add useFetch typings
 
-## Contributing 
+## Contributing
 
 Feedback, issues and PRs are welcomed.
