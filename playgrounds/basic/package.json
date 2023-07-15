@@ -1,5 +1,5 @@
 {
-  "name": "@hebilicious/server-block-nuxt_playground",
+  "name": "@hebilicious/server-block-nuxt_basic-playground",
   "private": true,
   "scripts": {
     "build": "NITRO_PRESET=cloudflare_pages nuxt build",

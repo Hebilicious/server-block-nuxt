@@ -1,0 +1,27 @@
+{
+  "name": "@hebilicious/server-block-nuxt_prisma-playground",
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "prisma": "nuxt prepare && npx prisma migrate dev --name init && npx prisma db seed"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.0.0"
+  },
+  "devDependencies": {
+    "@hebilicious/server-block-nuxt": "latest",
+    "@hebilicious/sfc-server-volar": "latest",
+    "@nuxt/devtools": "latest",
+    "@types/node": "^18.16.19",
+    "esno": "^0.17.0",
+    "nuxt": "^3.6.2",
+    "prisma": "^5.0.0"
+  },
+  "prisma": {
+    "seed": "esno prisma/seed.ts",
+    "schema": "./prisma/schema.prisma"
+  }
+}
