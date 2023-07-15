@@ -108,10 +108,14 @@ A `.gitignore` file will be generated for you. Do not commit the generated files
 - `<server>` blocks are completely removed from the SFC and don't interfere with `<template>` or `<script>`, they create a clear boundary.
 - The syntax highlighting work in environments that uses the lang attribute. I would like github support too.
 
+**Why no `defineServerProps` or loaders ?**
+
+You can combine this with another library such as https://github.com/Hebilicious/form-actions-nuxt if you want to use form actions and loaders.
+
 ## TODO
 
 - [ ] Support multiple server blocks in a single file
-- [ ] Integrates with form-actions & loaders
+- [x] Integrates with form-actions & loaders
 - [ ] Add useFetch typings
 
 ## Contributing 
