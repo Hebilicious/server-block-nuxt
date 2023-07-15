@@ -6,14 +6,14 @@ const prisma = new PrismaClient()
 const todoData: Prisma.TodoCreateInput[] = [{ title: "Milk", content: "Buy milk", completed: false }]
 
 async function main() {
-  console.log("Start seeding ...")
+  // console.log("Start seeding ...")
   for (const t of todoData) {
-    const todo = await prisma.todo.create({
+    await prisma.todo.create({
       data: t
     })
-    console.log(`Created todo with id: ${todo.id}`)
+    // console.log(`Created todo with id: ${todo.id}`)
   }
-  console.log("Seeding finished.")
+  // console.log("Seeding finished.")
 }
 
 main()
