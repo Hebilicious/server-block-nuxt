@@ -8,5 +8,20 @@
     "antfu/if-newline": "off",
     "curly": ["error", "multi-line"],
     "object-property-newline": ["off", { "allowAllPropertiesOnSameLine": true}]
-  }
+  },
+  "overrides": [
+    {
+      "files": ["package.json"],
+      "parser": "jsonc-eslint-parser",
+      "rules": {
+        "jsonc/sort-keys": [
+          "error",
+          {
+            "pathPattern": "^exports.*$",
+            "order": ["require", "import", "types", "default"]
+          }
+        ]
+      }
+    }
+  ]
 }
