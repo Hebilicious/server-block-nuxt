@@ -10,5 +10,5 @@ const { data } = useFetch("/not-api/this/is/cool")
 
 <template>
   <h1>Hello</h1>
-  <div> {{ data }} </div>
+  <code> {{ data }} </code>
 </template>
