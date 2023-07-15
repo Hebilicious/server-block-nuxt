@@ -27,9 +27,7 @@ const serverOutput = "server/.generated" as const
 export default defineNuxtModule({
   meta: {
     name,
-    compatibility: {
-      nuxt: ">=3.0.0"
-    }
+    compatibility: { nuxt: ">=3.0.0" }
   },
   async setup(userOptions, nuxt) {
     const { resolve } = createResolver(import.meta.url)
@@ -39,7 +37,8 @@ export default defineNuxtModule({
 
     // 0. Create directories and .gitignore
     const serverGeneratedDirectoryPath = resolve(nuxt.options.srcDir, "server/.generated")
-    if (!existsSync(serverGeneratedDirectoryPath)) await fsp.mkdir(serverGeneratedDirectoryPath)
+    if (existsSync(serverGeneratedDirectoryPath)) await fsp.rm(serverGeneratedDirectoryPath, { recursive: true })
+    await fsp.mkdir(serverGeneratedDirectoryPath, { recursive: true })
     await fsp.writeFile(`${serverGeneratedDirectoryPath}/.gitignore`, "*")
 
     // 1. Add Volar plugin
