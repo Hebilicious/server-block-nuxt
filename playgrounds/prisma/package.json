@@ -6,7 +6,7 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "prepare": "nuxt prepare && npx prisma migrate dev --name init && npx prisma db seed"
+    "prisma": "nuxt prepare && npx prisma migrate dev --name init && npx prisma db seed"
   },
   "devDependencies": {
     "@hebilicious/server-block-nuxt": "latest",
