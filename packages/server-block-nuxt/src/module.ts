@@ -1,6 +1,6 @@
 import { existsSync, promises as fsp } from "node:fs"
 
-import { addPlugin, addServerHandler, createResolver, defineNuxtModule, useNitro } from "@nuxt/kit"
+import { addPlugin, createResolver, defineNuxtModule, useNitro } from "@nuxt/kit"
 import ExtractSFCBlock from "@hebilicious/extract-sfc-block"
 
 import { loadFile } from "magicast"
@@ -66,19 +66,12 @@ export default defineNuxtModule({
             for (const handler of handlers) {
               logger.success(`[update] Wrote ${handler.method} handler @${handler.route} : ${shortened(handler.handler)}`)
               allHandlers.set(handler.handler, handler)
-              if (!nuxt.options.serverHandlers.some(h => h.handler === handler.handler)) {
-                addServerHandler({ ...handler, lazy: true })
-                logger.success(`[update] Nuxt handler updated : ${handler.route}`)
-              }
-            }
-            for (const [path, handler] of allHandlers.entries()) {
-              if (useNitro().scannedHandlers.find(h => h.handler === path)) continue
-              useNitro().scannedHandlers.push({ ...handler, lazy: true })
+              if (useNitro().options.handlers.find(h => h.handler === handler.handler)) continue
+              useNitro().options.handlers.push({ ...handler, lazy: true })
             }
           }
           // await useNuxt().hooks.callHookParallel("app:data:refresh") @todo find a way to refresh data here
-          logger.info("[update]: Nitro Handlers \n", useNitro().scannedHandlers.map(h => h.route))
-          logger.info("[update]: Nuxt Handlers \n", nuxt.options.serverHandlers.map(h => h.route))
+          logger.info("[update]: Nitro Handlers \n", useNitro().options.handlers.map(h => h.route))
         }
       }
       catch (error) {
