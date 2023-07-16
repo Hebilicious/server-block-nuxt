@@ -1,8 +1,19 @@
 # ⚗️ Server Block Nuxt
 
 [![CI](https://github.com/Hebilicious/server-block-nuxt/actions/workflows/ci.yaml/badge.svg)](https://github.com/Hebilicious/server-block-nuxt/actions/workflows/ci.yaml)
-[![npm version](https://badge.fury.io/js/@hebilicious%2Fserver-block-nuxt.svg)](https://badge.fury.io/js/@hebilicious%2Fserver-block-nuxt)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![npm version][npm-version-src]][npm-version-href]
+[![npm downloads][npm-downloads-src]][npm-downloads-href]
+[![License][license-src]][license-href]
+[![Nuxt][nuxt-src]][nuxt-href]
+
+[npm-version-src]: https://img.shields.io/npm/v/@hebilicious/server-block-nuxt/latest.svg?style=flat&colorA=18181B&colorB=28CF8D
+[npm-version-href]: https://npmjs.com/package/@hebilicious/server-block-nuxt
+[npm-downloads-src]: https://img.shields.io/npm/dt/@hebilicious/server-block-nuxt.svg?style=flat&colorA=18181B&colorB=28CF8D
+[npm-downloads-href]: https://npmjs.com/package/@hebilicious/server-block-nuxt
+[license-src]: https://img.shields.io/npm/l/@hebilicious/server-block-nuxt.svg?style=flat&colorA=18181B&colorB=28CF8D
+[license-href]: https://npmjs.com/package/@hebilicious/server-block-nuxt
+[nuxt-src]: https://img.shields.io/badge/Nuxt-18181B?logo=nuxt.js
+[nuxt-href]: https://nuxt.com
 
 🚀 Welcome to __Server Block Nuxt__!  
 
