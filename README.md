@@ -1,4 +1,4 @@
-# ⚗️ Server Block Nuxt
+# Server Block Nuxt
 
 [![CI](https://github.com/Hebilicious/server-block-nuxt/actions/workflows/ci.yaml/badge.svg)](https://github.com/Hebilicious/server-block-nuxt/actions/workflows/ci.yaml)
 [![npm version][npm-version-src]][npm-version-href]
@@ -15,9 +15,11 @@
 [nuxt-src]: https://img.shields.io/badge/Nuxt-18181B?logo=nuxt.js
 [nuxt-href]: https://nuxt.com
 
-🚀 Welcome to __Server Block Nuxt__!  
+<img width="1000" alt="image" src="https://github.com/Hebilicious/server-block-nuxt/assets/13395944/4051eefe-cd83-48cb-a08b-88c451988d10">
 
-_🧪 This module is experimental._
+## 🚀 Welcome to __Server Block Nuxt__!
+
+_🧪 This module is experimental 🧪_
 
 Nuxt Module that adds server block supports in your pages components.
 
@@ -29,8 +31,6 @@ Nuxt Module that adds server block supports in your pages components.
 ```
 
 You can think of server block as a convenient way to write API handlers in your pages components.
-
-<img width="1112" alt="image" src="https://github.com/Hebilicious/server-block-nuxt/assets/13395944/4051eefe-cd83-48cb-a08b-88c451988d10">
 
 ## 📦 Install
 
@@ -110,13 +110,13 @@ This will generate a get handler: `server/.generated/not-api/this/is/cool.get.ts
 
 A `.gitignore` file will be generated for you. Do not commit the generated files in your repository.
 
-## Troubleshooting
+## ⚗ Troubleshooting
 
 While developing your application, you might encounter a `Page Not Found` error while hitting your extracted server handlers.
 To fix this, you can delete the vite cache (usually in `node_modules/.cache/vite`). 
 If you need more help, feel free to open an issue.
 
-## FAQ
+## 💡 FAQ
 
 **Why `<server>` and not `<script server>` ?**
 
@@ -128,12 +128,12 @@ If you need more help, feel free to open an issue.
 
 You can combine this with another library such as https://github.com/Hebilicious/form-actions-nuxt if you want to use form actions and loaders.
 
-## TODO
+## 📝 TODO
 
-- [ ] Support multiple server blocks in a single file
 - [x] Integrates with form-actions & loaders
+- [ ] Support multiple server blocks in a single file
 - [ ] Add useFetch typings
 
-## Contributing
+## 🫴 Contributing
 
 Feedback, issues and PRs are welcomed.
