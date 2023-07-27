@@ -106,15 +106,7 @@ const { data } = useFetch("/not-api/this/is/cool")
 </template>
 ```
 
-This will generate a get handler: `server/.generated/not-api/this/is/cool.get.ts`.
-
-A `.gitignore` file will be generated for you. Do not commit the generated files in your repository.
-
-## ⚗ Troubleshooting
-
-While developing your application, you might encounter a `Page Not Found` error while hitting your extracted server handlers.
-To fix this, you can delete the vite cache (usually in `node_modules/.cache/vite`). 
-If you need more help, feel free to open an issue.
+A `server/.generated/not-api/this/is/cool.get.ts` get handler will be generated.
 
 ## 💡 FAQ
 
@@ -128,11 +120,14 @@ If you need more help, feel free to open an issue.
 
 You can combine this with another library such as https://github.com/Hebilicious/form-actions-nuxt if you want to use form actions and loaders.
 
+**Should I commit the generated files to my repository?**
+No. A `.gitignore` file will be generated for you.
+
 ## 📝 TODO
 
 - [x] Integrates with form-actions & loaders
+- [x] Add useFetch typings
 - [ ] Support multiple server blocks in a single file
-- [ ] Add useFetch typings
 
 ## 🫴 Contributing
 
