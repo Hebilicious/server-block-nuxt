@@ -4,7 +4,7 @@ import { addPlugin, createResolver, defineNuxtModule, useNitro } from "@nuxt/kit
 import ExtractSFCBlock from "@hebilicious/extract-sfc-block"
 
 import { loadFile } from "magicast"
-import type { NitroEventHandler } from "nitropack"
+import { type NitroEventHandler, writeTypes } from "nitropack"
 import { SupportedMethods, getRoute, logger, makePathShortener, writeHandlers } from "./utils"
 
 export async function* walkFiles(dir: string): AsyncGenerator<string> {
@@ -82,6 +82,7 @@ export default defineNuxtModule({
           }
         }
         // await useNuxt().hooks.callHookParallel("app:data:refresh") @todo find a way to refresh data here
+        await writeTypes(useNitro()) // Write Nitro handler types for useFetch
         logger.info("[update]: Nitro Handlers \n", useNitro().options.handlers.map(h => h.route))
       }
     }
