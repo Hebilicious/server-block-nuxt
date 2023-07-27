@@ -7,7 +7,7 @@ import { loadFile } from "magicast"
 import { type NitroEventHandler, writeTypes } from "nitropack"
 import { SupportedMethods, getRoute, logger, makePathShortener, writeHandlers } from "./utils"
 
-export async function* walkFiles(dir: string): AsyncGenerator<string> {
+async function* walkFiles(dir: string): AsyncGenerator<string> {
   const entries = await fsp.readdir(dir, { withFileTypes: true })
   for (const entry of entries) {
     const res = pathResolve(dir, entry.name)
