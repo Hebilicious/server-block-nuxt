@@ -44,6 +44,8 @@
   },
   "peerDependencies": {
     "@hebilicious/sfc-server-volar": "*",
+    "h3": "*",
+    "nitropack": "*",
     "nuxt": "*",
     "vite": "*"
   },
@@ -56,9 +58,6 @@
     "magicast": "^0.2.9"
   },
   "devDependencies": {
-    "@hebilicious/sfc-server-volar": "latest",
-    "@nuxt/module-builder": "^0.4.0",
-    "h3": "^1.7.1",
-    "nitropack": "^2.5.2"
+    "@nuxt/module-builder": "^0.4.0"
   }
 }
