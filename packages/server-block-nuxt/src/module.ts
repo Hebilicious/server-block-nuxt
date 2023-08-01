@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/prefer-ts-expect-error */
 import { existsSync, promises as fsp } from "node:fs"
 import { resolve as pathResolve } from "node:path"
 import { addPlugin, createResolver, defineNuxtModule, useNitro } from "@nuxt/kit"
@@ -39,11 +40,11 @@ export default defineNuxtModule({
 
     // 1. Add Volar plugin
     nuxt.options.typescript.tsConfig ||= {}
-    // @ts-ignore
+    // @ts-ignore TSconfig is wrong
     nuxt.options.typescript.tsConfig.vueCompilerOptions ||= {}
-    // @ts-ignore
+    // @ts-ignore TSconfig is wrong
     nuxt.options.typescript.tsConfig.vueCompilerOptions.plugins ||= []
-    // @ts-ignore
+    // @ts-ignore TSconfig is wrong
     nuxt.options.typescript.tsConfig.vueCompilerOptions.plugins.push("@hebilicious/sfc-server-volar")
 
     // 2. Add vite extract-sfc-block plugin
