@@ -58,8 +58,7 @@ export default function vueExtractSFCServer(pluginConfig: PluginConfig): PluginO
     },
 
     async handleHotUpdate({ modules, read, file, server }) {
-      if (!cache.hasFile(file))
-        return modules
+      if (!cache.hasFile(file)) return modules
 
       logger.info("Cache hit !", file)
       const serverModules = new Set(
