@@ -27,13 +27,10 @@ export default function vueExtractSFCServer(pluginConfig: PluginConfig): PluginO
     load(id) {
       // Only match vue files
       const match = id.match(/^(.*)\/([^/]+)\.vue$/)
-      if (!match) {
-        return
-      }
+      if (!match) return
       let filename = id
-      if (!filename.startsWith(config.root)) {
+      if (!filename.startsWith(config.root))
         filename = path.resolve(config.root, filename)
-      }
 
       const sfc = cache.getSFC(filename)
       const extractBlock = sfc.customBlocks.find(findBlockType)
@@ -61,9 +58,8 @@ export default function vueExtractSFCServer(pluginConfig: PluginConfig): PluginO
     },
 
     async handleHotUpdate({ modules, read, file, server }) {
-      if (!cache.hasFile(file)) {
-        return modules
-      }
+      if (!cache.hasFile(file)) return modules
+
       logger.info("Cache hit !", file)
       const serverModules = new Set(
         modules.filter(m => m.url.includes(`&type=${pluginConfig.blockType}&`))

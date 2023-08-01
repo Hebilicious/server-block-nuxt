@@ -43,8 +43,8 @@
     "consola": "^3.2.3"
   },
   "devDependencies": {
-    "unplugin": "^1.3.2",
-    "vite": "^4.4.4",
+    "unplugin": "^1.4.0",
+    "vite": "^4.4.8",
     "vue": "^3.3.4"
   }
 }

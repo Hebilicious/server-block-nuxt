@@ -22,18 +22,14 @@ export default function createCache(config: ResolvedConfig) {
             sourceRoot: config.root
           }
         )
-        if (errors.length > 0) {
-          throw errors[0]
-        }
+        if (errors.length > 0) throw errors[0]
         sfcCache.set(filename, descriptor)
       }
       return sfcCache.get(filename)!
     },
     updateCodeSFC(filename: string, code: string) {
       const { descriptor, errors } = compiler.parse(code, { filename })
-      if (errors.length > 0) {
-        throw errors[0]
-      }
+      if (errors.length > 0) throw errors[0]
       sfcCache.set(filename, descriptor)
       return descriptor
     },
@@ -62,9 +58,8 @@ export function resolveCompiler(root: string): CompilerSfc {
 function tryResolveCompiler(root?: string) {
   const vueMeta = tryRequire("vue/package.json", root)
   // make sure to check the version is 3+ since 2.7 now also has vue/compiler-sfc
-  if (vueMeta && vueMeta.version.split(".")[0] >= 3) {
+  if (vueMeta && vueMeta.version.split(".")[0] >= 3)
     return tryRequire("vue/compiler-sfc", root)
-  }
 }
 
 const _require = createRequire(import.meta.url)

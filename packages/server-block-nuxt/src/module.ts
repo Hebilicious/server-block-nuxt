@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/prefer-ts-expect-error */
 import { existsSync, promises as fsp } from "node:fs"
 import { resolve as pathResolve } from "node:path"
 import { addPlugin, createResolver, defineNuxtModule, useNitro } from "@nuxt/kit"
@@ -11,12 +12,8 @@ async function* walkFiles(dir: string): AsyncGenerator<string> {
   const entries = await fsp.readdir(dir, { withFileTypes: true })
   for (const entry of entries) {
     const res = pathResolve(dir, entry.name)
-    if (entry.isDirectory()) {
-      yield * walkFiles(res)
-    }
-    else {
-      yield res
-    }
+    if (entry.isDirectory()) yield * walkFiles(res)
+    else yield res
   }
 }
 
@@ -43,8 +40,11 @@ export default defineNuxtModule({
 
     // 1. Add Volar plugin
     nuxt.options.typescript.tsConfig ||= {}
+    // @ts-ignore TSconfig is wrong
     nuxt.options.typescript.tsConfig.vueCompilerOptions ||= {}
+    // @ts-ignore TSconfig is wrong
     nuxt.options.typescript.tsConfig.vueCompilerOptions.plugins ||= []
+    // @ts-ignore TSconfig is wrong
     nuxt.options.typescript.tsConfig.vueCompilerOptions.plugins.push("@hebilicious/sfc-server-volar")
 
     // 2. Add vite extract-sfc-block plugin
@@ -89,9 +89,8 @@ export default defineNuxtModule({
 
     // 3.Add handlers on build.
     nuxt.hook("build:before", async () => {
-      for await (const loaderPath of walkFiles(serverGeneratedDirectoryPath)) {
+      for await (const loaderPath of walkFiles(serverGeneratedDirectoryPath))
         await addHandlers(loaderPath, "build:before")
-      }
     })
 
     // 4.Watch directories, split handlers and add them to Nitro/Nuxt
