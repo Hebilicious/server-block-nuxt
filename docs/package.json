@@ -1,5 +1,5 @@
 {
-  "name": "@hebilicious/server-block-nuxt_docs",
+  "name": "docs",
   "private": true,
   "scripts": {
     "dev": "vitepress dev",

@@ -43,7 +43,7 @@
     "dev": "nuxi dev"
   },
   "peerDependencies": {
-    "@hebilicious/sfc-server-volar": "*",
+    "@hebilicious/sfc-server-volar": "latest",
     "h3": "*",
     "nitropack": "*",
     "nuxt": "*",

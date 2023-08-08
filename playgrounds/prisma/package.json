@@ -1,5 +1,5 @@
 {
-  "name": "@hebilicious/server-block-nuxt_prisma-playground",
+  "name": "prisma-playground",
   "private": true,
   "scripts": {
     "build": "nuxt build",
