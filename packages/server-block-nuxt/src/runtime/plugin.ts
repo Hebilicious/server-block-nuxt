@@ -1,3 +1,5 @@
+import { defineNuxtPlugin } from "#imports"
+
 export default defineNuxtPlugin(async (nuxt) => {
   // @todo this may need to be fixed in Nuxt
   nuxt.hook("app:suspense:resolve", async () => {
