@@ -54,7 +54,7 @@
     "@nuxt/kit": "3.6.5",
     "consola": "^3.2.3",
     "defu": "^6.1.2",
-    "esbuild": "^0.19.0",
+    "esbuild": "^0.19.2",
     "magicast": "^0.2.10"
   },
   "devDependencies": {

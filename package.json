@@ -16,24 +16,24 @@
   },
   "devDependencies": {
     "@antfu/ni": "^0.21.5",
-    "@hebilicious/eslint-config": "0.0.3-beta.2",
+    "@hebilicious/eslint-config": "0.0.3-beta.3",
     "@nuxt/test-utils": "^3.6.5",
-    "@types/node": "^18.17.4",
-    "bumpp": "^9.1.1",
+    "@types/node": "^18.17.6",
+    "bumpp": "^9.2.0",
     "conventional-changelog-cli": "^3.0.0",
-    "eslint": "8.46.0",
+    "eslint": "8.47.0",
     "esno": "^0.17.0",
     "fast-glob": "^3.3.1",
-    "lint-staged": "^13.2.3",
+    "lint-staged": "^13.3.0",
     "pnpm": "8.6.12",
-    "prettier": "^3.0.1",
+    "prettier": "^3.0.2",
     "rimraf": "^5.0.1",
     "simple-git-hooks": "^2.9.0",
     "taze": "^0.11.2",
     "turbo": "^1.10.12",
     "typescript": "^5.1.6",
     "unbuild": "^1.2.1",
-    "vitest": "^0.34.1"
+    "vitest": "^0.34.2"
   },
   "simple-git-hooks": {
     "pre-commit": "npx lint-staged"
