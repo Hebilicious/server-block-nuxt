@@ -9,8 +9,8 @@ importers:
   .:
     devDependencies:
       '@antfu/ni':
-        specifier: ^0.21.7
-        version: 0.21.7
+        specifier: ^0.21.8
+        version: 0.21.8
       '@hebilicious/eslint-config':
         specifier: 0.0.3-beta.3
         version: 0.0.3-beta.3(eslint@8.48.0)(typescript@5.2.2)
@@ -431,8 +431,8 @@ packages:
       - typescript
     dev: true
 
-  /@antfu/ni@0.21.7:
-    resolution: {integrity: sha512-c7ilpbLAfYnYwueV34w3FXU25OxYaM8eXSXnbIyh10R9CUa/O5PzNtho9ki7nMon1RdcrweJssvPg1D5hnGigw==}
+  /@antfu/ni@0.21.8:
+    resolution: {integrity: sha512-90X8pU2szlvw0AJo9EZMbYc2eQKkmO7mAdC4tD4r5co2Mm56MT37MIG8EyB7p4WRheuzGxuLDxJ63mF6+Zajiw==}
     hasBin: true
     dev: true
 
@@ -2132,7 +2132,7 @@ packages:
       estree-walker: 3.0.3
       externality: 1.0.2
       fs-extra: 11.1.1
-      get-port-please: 3.0.1
+      get-port-please: 3.0.2
       h3: 1.8.1
       knitwork: 1.0.0
       magic-string: 0.30.3
@@ -2194,7 +2194,7 @@ packages:
       estree-walker: 3.0.3
       externality: 1.0.2
       fs-extra: 11.1.1
-      get-port-please: 3.0.1
+      get-port-please: 3.0.2
       h3: 1.8.1
       knitwork: 1.0.0
       magic-string: 0.30.3
@@ -2376,6 +2376,7 @@ packages:
     dependencies:
       is-glob: 4.0.3
       micromatch: 4.0.5
+      napi-wasm: 1.1.0
     bundledDependencies:
       - napi-wasm
 
@@ -7370,6 +7371,9 @@ packages:
     engines: {node: ^14 || ^16 || >=18}
     hasBin: true
 
+  /napi-wasm@1.1.0:
+    resolution: {integrity: sha512-lHwIAJbmLSjF9VDRm9GoVOy9AGp3aIvkjv+Kvz9h16QR3uSVYH78PNQUnT2U4X53mhlnV2M7wrhibQ3GHicDmg==}
+
   /natural-compare-lite@1.4.0:
     resolution: {integrity: sha512-Tj+HTDSJJKaZnfiuw+iaF9skdPpTo2GtEly5JHnWV/hfv2Qj/9RKsGISQtLh2ox3l5EAGw487hnBee0sIJ6v2g==}
     dev: true
@@ -9782,7 +9786,7 @@ packages:
     resolution: {integrity: sha512-HM4chXXDaHCAl1AFbSlyHUFjoaEKTewVE0j6ni5S5mRdPdJdva4AfcmXgBZYnRBiJagl6QuVtsqLjqHUiiO20A==}
     hasBin: true
     dependencies:
-      '@antfu/ni': 0.21.7
+      '@antfu/ni': 0.21.8
       '@npmcli/config': 6.2.1
       detect-indent: 7.0.1
       execa: 7.1.1
