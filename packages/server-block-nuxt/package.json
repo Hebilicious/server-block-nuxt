@@ -51,13 +51,13 @@
   },
   "dependencies": {
     "@hebilicious/extract-sfc-block": "latest",
-    "@nuxt/kit": "3.6.5",
+    "@nuxt/kit": "3.7.0",
     "consola": "^3.2.3",
     "defu": "^6.1.2",
     "esbuild": "^0.19.2",
     "magicast": "^0.2.10"
   },
   "devDependencies": {
-    "@nuxt/module-builder": "^0.4.0"
+    "@nuxt/module-builder": "^0.5.1"
   }
 }
