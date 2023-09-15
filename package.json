@@ -30,7 +30,7 @@
     "rimraf": "^5.0.1",
     "simple-git-hooks": "^2.9.0",
     "taze": "^0.11.2",
-    "turbo": "^1.10.13",
+    "turbo": "^1.10.14",
     "typescript": "^5.2.2",
     "unbuild": "^2.0.0",
     "vitest": "^0.34.4"
