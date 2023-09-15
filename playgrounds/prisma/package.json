@@ -9,7 +9,7 @@
     "prisma": "nuxt prepare && npx prisma migrate dev --name init && npx prisma db seed"
   },
   "dependencies": {
-    "@prisma/client": "^5.2.0"
+    "@prisma/client": "^5.3.0"
   },
   "devDependencies": {
     "@hebilicious/server-block-nuxt": "latest",
@@ -17,8 +17,8 @@
     "@nuxt/devtools": "latest",
     "@types/node": "^18.17.15",
     "esno": "^0.17.0",
-    "nuxt": "^3.7.1",
-    "prisma": "^5.2.0"
+    "nuxt": "^3.7.3",
+    "prisma": "^5.3.0"
   },
   "prisma": {
     "seed": "esno prisma/seed.ts",
