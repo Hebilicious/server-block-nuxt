@@ -15,7 +15,7 @@
     "@hebilicious/server-block-nuxt": "latest",
     "@hebilicious/sfc-server-volar": "latest",
     "@nuxt/devtools": "latest",
-    "@types/node": "^18.17.16",
+    "@types/node": "^18.17.18",
     "esno": "^0.17.0",
     "nuxt": "^3.7.3",
     "prisma": "^5.3.1"
