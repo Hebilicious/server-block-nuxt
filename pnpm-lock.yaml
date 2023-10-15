@@ -39,8 +39,8 @@ importers:
         specifier: ^14.0.1
         version: 14.0.1
       pnpm:
-        specifier: 8.9.0
-        version: 8.9.0
+        specifier: 8.9.1
+        version: 8.9.1
       prettier:
         specifier: ^3.0.3
         version: 3.0.3
@@ -51,8 +51,8 @@ importers:
         specifier: ^2.9.0
         version: 2.9.0
       taze:
-        specifier: ^0.11.3
-        version: 0.11.3
+        specifier: ^0.11.4
+        version: 0.11.4
       turbo:
         specifier: ^1.10.15
         version: 1.10.15
@@ -1582,9 +1582,9 @@ packages:
       - supports-color
     dev: true
 
-  /@npmcli/config@6.3.0:
-    resolution: {integrity: sha512-gV64pm5cQ7F2oeoSJ5HTfaKxjFsvC4dAbCsQbtbOkEOymM6iZI62yNGCOLjcq/rfYX9+wVn34ThxK7GZpUwWFg==}
-    engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
+  /@npmcli/config@8.0.0:
+    resolution: {integrity: sha512-a2ybqstXSCAbP7QghgGcOvLTBlaR3wWQyAmTfWXJld6qP6+vKQabTZQwzRPs00kKi870beNZHhV4Fvlca2l/uA==}
+    engines: {node: ^16.14.0 || >=18.0.0}
     dependencies:
       '@npmcli/map-workspaces': 3.0.4
       ci-info: 3.8.0
@@ -1641,7 +1641,7 @@ packages:
     engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
     dependencies:
       '@npmcli/name-from-folder': 2.0.0
-      glob: 10.2.6
+      glob: 10.3.10
       minimatch: 9.0.3
       read-package-json-fast: 3.0.2
     dev: true
@@ -6027,18 +6027,6 @@ packages:
     dependencies:
       is-glob: 4.0.3
 
-  /glob@10.2.6:
-    resolution: {integrity: sha512-U/rnDpXJGF414QQQZv5uVsabTVxMSwzS5CH0p3DRCIV6ownl4f7PzGnkGmvlum2wB+9RlJWJZ6ACU1INnBqiPA==}
-    engines: {node: '>=16 || 14 >=14.17'}
-    hasBin: true
-    dependencies:
-      foreground-child: 3.1.1
-      jackspeak: 2.2.0
-      minimatch: 9.0.3
-      minipass: 5.0.0
-      path-scurry: 1.7.0
-    dev: true
-
   /glob@10.3.10:
     resolution: {integrity: sha512-fa46+tv1Ak0UPK1TOy/pZrIybNNt4HCv7SDzwyfiOZkvZLEbjsZkJBPtDHVshZjbecAoAGSC20MjLDG/qr679g==}
     engines: {node: '>=16 || 14 >=14.17'}
@@ -6570,15 +6558,6 @@ packages:
     engines: {node: '>=16'}
     dev: true
 
-  /jackspeak@2.2.0:
-    resolution: {integrity: sha512-r5XBrqIJfwRIjRt/Xr5fv9Wh09qyhHfKnYddDlpM+ibRR20qrYActpCAgU6U+d53EOEjzkvxPMVHSlgR7leXrQ==}
-    engines: {node: '>=14'}
-    dependencies:
-      '@isaacs/cliui': 8.0.2
-    optionalDependencies:
-      '@pkgjs/parseargs': 0.11.0
-    dev: true
-
   /jackspeak@2.3.6:
     resolution: {integrity: sha512-N3yCS/NegsOBokc8GAdM8UcmfsKiSS8cipheD/nivzr700H+nsMOxJjQnvwOcRYVuFkdH0wGUvW2WbXGmrZGbQ==}
     engines: {node: '>=14'}
@@ -6906,11 +6885,6 @@ packages:
   /lru-cache@7.18.3:
     resolution: {integrity: sha512-jumlc0BIUrS3qJGgIkWZsyfAM7NCWiBcCDhnd+3NNM5KbBmLTgHVfWBcg6W+rLUsIpzpERPsvwUP7CckAQSOoA==}
     engines: {node: '>=12'}
-    dev: true
-
-  /lru-cache@9.1.1:
-    resolution: {integrity: sha512-65/Jky17UwSb0BuB9V+MyDpsOtXKmYwzhyl+cOa9XUiI4uV2Ouy/2voFP3+al0BjZbJgMBD8FojMpAf+Z+qn4A==}
-    engines: {node: 14 || >=16.14}
     dev: true
 
   /magic-string-ast@0.1.2:
@@ -8422,14 +8396,6 @@ packages:
       minipass: 7.0.3
     dev: true
 
-  /path-scurry@1.7.0:
-    resolution: {integrity: sha512-UkZUeDjczjYRE495+9thsgcVgsaCPkaw80slmfVFgllxY+IO8ubTsOpFVjDPROBqJdHfVPUFRHPBV/WciOVfWg==}
-    engines: {node: '>=16 || 14 >=14.17'}
-    dependencies:
-      lru-cache: 9.1.1
-      minipass: 5.0.0
-    dev: true
-
   /path-type@4.0.0:
     resolution: {integrity: sha512-gDKb8aZMDeD/tZWs9P6+q0J9Mwkdl6xMV8TjnGP3qJVJ06bdMgkbBlLU8IdfOsIsFz2BW1rNVT3XuNEl8zPAvw==}
     engines: {node: '>=8'}
@@ -8473,8 +8439,8 @@ packages:
     engines: {node: '>=4'}
     dev: true
 
-  /pnpm@8.9.0:
-    resolution: {integrity: sha512-74hZk44fBTe5/PAwkEQxE5Lzs4s0QXbmzU/e4hsiVSSwrCobCK4q4t3Vs/9LjKSW1neOlQ8+fJ9VW4EyWYJEHA==}
+  /pnpm@8.9.1:
+    resolution: {integrity: sha512-/ma2OuIl3ISym/T14A10j0TASAX/xdk4aDaUZj+4IwmrBCCkSpB1F9QNuPSeQs2POqEKtxa5BzbPE/mJQFWxaQ==}
     engines: {node: '>=16.14'}
     hasBin: true
     dev: true
@@ -9658,12 +9624,12 @@ packages:
       mkdirp: 1.0.4
       yallist: 4.0.0
 
-  /taze@0.11.3:
-    resolution: {integrity: sha512-8VbKvowHtj9aO2/NYIHXv48bD1ysBHBbHS1YuAm6Zi0WndblZdzDCVoOwKaX0eN23BHX5Q/Y8FE6kqDf/sWmdA==}
+  /taze@0.11.4:
+    resolution: {integrity: sha512-X7Dob7+n77GOHO7UUQ+Bn2gZXjRK1NLffb/lMGy41uyGUCh3zOZVlQ+M7IrntXmSsNy0DDKpdzSe40mQK5NTVw==}
     hasBin: true
     dependencies:
       '@antfu/ni': 0.21.8
-      '@npmcli/config': 6.3.0
+      '@npmcli/config': 8.0.0
       cli-progress: 3.12.0
       deepmerge: 4.3.1
       detect-indent: 7.0.1
@@ -9672,7 +9638,7 @@ packages:
       picocolors: 1.0.0
       prompts: 2.4.2
       semver: 7.5.4
-      unconfig: 0.3.10
+      unconfig: 0.3.11
       yargs: 17.7.2
     transitivePeerDependencies:
       - bluebird
@@ -9981,8 +9947,8 @@ packages:
       - supports-color
     dev: true
 
-  /unconfig@0.3.10:
-    resolution: {integrity: sha512-tj317lhIq2iZF/NXrJnU1t2UaGUKKz1eL1sK2t63Oq66V9BxqvZV12m55fp/fpQJ+DDmVlLgo7cnLVOZkhlO/A==}
+  /unconfig@0.3.11:
+    resolution: {integrity: sha512-bV/nqePAKv71v3HdVUn6UefbsDKQWRX+bJIkiSm0+twIds6WiD2bJLWWT3i214+J/B4edufZpG2w7Y63Vbwxow==}
     dependencies:
       '@antfu/utils': 0.7.6
       defu: 6.1.2
