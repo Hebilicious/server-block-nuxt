@@ -1,4 +1,4 @@
-# Extract SFC Server
+# Extract SFC Block
 
 Extract custom blocks from `.vue` files.
 
