@@ -18,7 +18,7 @@
     "@antfu/ni": "^0.21.8",
     "@hebilicious/eslint-config": "0.0.3-beta.3",
     "@nuxt/test-utils": "^3.8.0",
-    "@types/node": "^18.18.7",
+    "@types/node": "^18.18.8",
     "bumpp": "^9.2.0",
     "conventional-changelog-cli": "^4.1.0",
     "eslint": "8.52.0",
