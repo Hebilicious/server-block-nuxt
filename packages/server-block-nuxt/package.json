@@ -58,6 +58,6 @@
     "magicast": "^0.3.0"
   },
   "devDependencies": {
-    "@nuxt/module-builder": "^0.5.3"
+    "@nuxt/module-builder": "^0.5.4"
   }
 }
