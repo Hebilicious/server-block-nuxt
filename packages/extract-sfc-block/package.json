@@ -39,12 +39,12 @@
   },
   "dependencies": {
     "@vitejs/plugin-vue": "^4.5.0",
-    "@vue/shared": "^3.3.8",
+    "@vue/shared": "^3.3.9",
     "consola": "^3.2.3"
   },
   "devDependencies": {
     "unplugin": "^1.5.1",
     "vite": "^4.5.0",
-    "vue": "^3.3.8"
+    "vue": "^3.3.9"
   }
 }
