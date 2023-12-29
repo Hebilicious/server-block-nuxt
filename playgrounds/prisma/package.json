@@ -17,7 +17,7 @@
     "@nuxt/devtools": "latest",
     "@types/node": "^18.19.3",
     "esno": "^0.17.0",
-    "nuxt": "^3.8.2",
+    "nuxt": "^3.9.0",
     "prisma": "^5.7.1"
   },
   "prisma": {
