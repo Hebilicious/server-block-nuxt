@@ -38,13 +38,13 @@
     "build": "unbuild && pnpm run dts"
   },
   "dependencies": {
-    "@vitejs/plugin-vue": "^4.6.1",
-    "@vue/shared": "^3.4.0",
+    "@vitejs/plugin-vue": "^4.6.2",
+    "@vue/shared": "^3.4.3",
     "consola": "^3.2.3"
   },
   "devDependencies": {
     "unplugin": "^1.6.0",
     "vite": "^4.5.0",
-    "vue": "^3.4.0"
+    "vue": "^3.4.3"
   }
 }
