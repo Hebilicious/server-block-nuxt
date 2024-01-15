@@ -55,7 +55,7 @@
     "consola": "^3.2.3",
     "defu": "^6.1.4",
     "esbuild": "^0.19.11",
-    "magicast": "^0.3.2"
+    "magicast": "^0.3.3"
   },
   "devDependencies": {
     "@nuxt/module-builder": "^0.5.5"
