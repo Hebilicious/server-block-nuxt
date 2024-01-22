@@ -51,7 +51,7 @@
   },
   "dependencies": {
     "@hebilicious/extract-sfc-block": "latest",
-    "@nuxt/kit": "3.9.1",
+    "@nuxt/kit": "3.9.3",
     "consola": "^3.2.3",
     "defu": "^6.1.4",
     "esbuild": "^0.19.11",
