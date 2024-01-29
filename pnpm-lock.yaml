@@ -39,8 +39,8 @@ importers:
         specifier: ^14.0.1
         version: 14.0.1
       pnpm:
-        specifier: 8.15.0
-        version: 8.15.0
+        specifier: 8.15.1
+        version: 8.15.1
       prettier:
         specifier: ^3.2.4
         version: 3.2.4
@@ -9441,8 +9441,8 @@ packages:
     engines: {node: '>=4'}
     dev: true
 
-  /pnpm@8.15.0:
-    resolution: {integrity: sha512-6kVRfVKF0SPqwCw3k1Bfof1tqQovxg0ejZ4MHpKSiG7Pr/UT8GK50cyAIbuGFQM7GsW+o7LuP8FlptcDS75rAw==}
+  /pnpm@8.15.1:
+    resolution: {integrity: sha512-gxz0xfi4N0r3FSHU0VPbSdcIbeYVwq98tenX64umMN2sRv6kldZD5VLvLmijqpmj5en77oaWcClnUE31xZyycw==}
     engines: {node: '>=16.14'}
     hasBin: true
     dev: true
@@ -11160,7 +11160,7 @@ packages:
       fast-glob: 3.3.2
       local-pkg: 0.4.3
       magic-string: 0.30.5
-      mlly: 1.5.0
+      mlly: 1.4.2
       pathe: 1.1.2
       pkg-types: 1.0.3
       scule: 1.2.0
