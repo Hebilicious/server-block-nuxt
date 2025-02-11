@@ -21,7 +21,7 @@
     "@types/node": "^18.19.10",
     "bumpp": "^9.3.0",
     "conventional-changelog-cli": "^4.1.0",
-    "eslint": "8.56.0",
+    "eslint": "9.20.1",
     "esno": "^0.17.0",
     "fast-glob": "^3.3.2",
     "lint-staged": "^14.0.1",
