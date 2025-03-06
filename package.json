@@ -19,7 +19,7 @@
     "@hebilicious/eslint-config": "0.0.3-beta.3",
     "@nuxt/test-utils": "^3.11.0",
     "@types/node": "^22.13.9",
-    "bumpp": "^9.3.0",
+    "bumpp": "^10.0.3",
     "conventional-changelog-cli": "^4.1.0",
     "eslint": "8.56.0",
     "esno": "^0.17.0",
