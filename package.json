@@ -24,7 +24,7 @@
     "eslint": "8.56.0",
     "esno": "^4.8.0",
     "fast-glob": "^3.3.2",
-    "lint-staged": "^14.0.1",
+    "lint-staged": "^15.4.3",
     "pnpm": "8.15.1",
     "prettier": "^3.2.4",
     "rimraf": "^5.0.5",
