@@ -15,7 +15,7 @@
     "test": "vitest"
   },
   "devDependencies": {
-    "@antfu/ni": "^23.3.1",
+    "@antfu/ni": "^24.1.0",
     "@hebilicious/eslint-config": "0.0.3-beta.3",
     "@nuxt/test-utils": "^3.11.0",
     "@types/node": "^22.13.9",
