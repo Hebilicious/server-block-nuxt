@@ -32,7 +32,7 @@
     "taze": "^19.0.2",
     "turbo": "^1.11.3",
     "typescript": "^5.3.3",
-    "unbuild": "^2.0.0",
+    "unbuild": "^3.5.0",
     "vitest": "^0.34.6"
   },
   "simple-git-hooks": {
