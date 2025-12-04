@@ -21,7 +21,7 @@ jobs:
       - name: Set node
         uses: actions/setup-node@v6
         with:
-          node-version: 22.19.0
+          node-version: 22.21.1
           cache: pnpm
 
       - name: Install
@@ -42,7 +42,7 @@ jobs:
       - name: Set node
         uses: actions/setup-node@v6
         with:
-          node-version: 22.19.0
+          node-version: 22.21.1
           cache: pnpm
 
       - name: Install
