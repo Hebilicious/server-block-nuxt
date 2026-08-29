@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/prefer-ts-expect-error */
 import { existsSync, promises as fsp } from "node:fs"
-import { resolve as pathResolve } from "node:path"
+import { relative, resolve as pathResolve } from "node:path"
 import { addPlugin, createResolver, defineNuxtModule, useNitro } from "@nuxt/kit"
 import ExtractSFCBlock from "@hebilicious/extract-sfc-block"
 
@@ -95,6 +95,7 @@ export default defineNuxtModule({
 
     // 4.Watch directories, split handlers and add them to Nitro/Nuxt
     nuxt.hook("builder:watch", async (event, path) => {
+      path = relative(nuxt.options.srcDir, pathResolve(nuxt.options.srcDir, path))
       try {
         await addHandlers(path, event)
       }
