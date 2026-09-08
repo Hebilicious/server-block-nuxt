@@ -18,7 +18,7 @@
     "@types/node": "^24.12.0",
     "esno": "^4.8.0",
     "nuxt": "^3.9.3",
-    "prisma": "^6.5.0"
+    "prisma": "^7.10.0"
   },
   "prisma": {
     "seed": "esno prisma/seed.ts",
