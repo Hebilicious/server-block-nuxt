@@ -16,7 +16,7 @@ importers:
         version: 0.0.3-beta.3(eslint@8.56.0)(typescript@5.3.3)
       '@nuxt/test-utils':
         specifier: ^4.0.0
-        version: 4.0.0(typescript@5.3.3)(vite@6.4.3)(vitest@4.1.11)
+        version: 4.0.0(rollup@4.35.0)(typescript@5.3.3)(vite@6.4.3)(vitest@4.1.11)
       '@types/node':
         specifier: ^24.12.0
         version: 24.12.0
@@ -85,8 +85,8 @@ importers:
         version: 3.2.3
     devDependencies:
       unplugin:
-        specifier: ^2.2.0
-        version: 2.2.0
+        specifier: ^3.3.0
+        version: 3.3.0(rollup@4.35.0)(vite@6.4.3)
       vite:
         specifier: ^6.2.2
         version: 6.4.3(@types/node@24.12.0)
@@ -3326,7 +3326,7 @@ packages:
       - supports-color
     dev: true
 
-  /@nuxt/test-utils@4.0.0(typescript@5.3.3)(vite@6.4.3)(vitest@4.1.11):
+  /@nuxt/test-utils@4.0.0(rollup@4.35.0)(typescript@5.3.3)(vite@6.4.3)(vitest@4.1.11):
     resolution: {integrity: sha512-QJfyCiqYxflUKA5xlEGuXdDApTBhJxoPXxYePIDtA90hkmKbhYs/mrMM+Bi9LiUrI/cCJOPRyIx9jOzhMvTIgg==}
     engines: {node: ^20.19.0 || ^22.12.0 || >=24.0.0}
     peerDependencies:
@@ -3388,15 +3388,23 @@ packages:
       std-env: 3.10.0
       tinyexec: 1.0.4
       ufo: 1.6.3
-      unplugin: 3.0.0
+      unplugin: 3.3.0(rollup@4.35.0)(vite@6.4.3)
       vitest: 4.1.11(@types/node@24.12.0)(vite@6.4.3)
-      vitest-environment-nuxt: 1.0.1(typescript@5.3.3)(vite@6.4.3)(vitest@4.1.11)
+      vitest-environment-nuxt: 1.0.1(rollup@4.35.0)(typescript@5.3.3)(vite@6.4.3)(vitest@4.1.11)
       vue: 3.5.31(typescript@5.3.3)
     transitivePeerDependencies:
+      - '@farmfe/core'
+      - '@rspack/core'
+      - bun-types-no-globals
       - crossws
+      - esbuild
       - magicast
+      - rolldown
+      - rollup
       - typescript
+      - unloader
       - vite
+      - webpack
     dev: true
 
   /@nuxt/ui-templates@1.2.0:
@@ -4527,7 +4535,7 @@ packages:
     dependencies:
       '@types/estree': 1.0.6
       estree-walker: 2.0.2
-      picomatch: 2.3.1
+      picomatch: 2.3.2
       rollup: 3.30.0
     dev: false
 
@@ -12151,10 +12159,6 @@ packages:
   /picocolors@1.1.1:
     resolution: {integrity: sha512-xceH2snhtb5M9liqDsmEw56le376mTZkEX/jEb/RxNFyegNul7eNslCXP9FDj/Lcu0X8KEyMceP2ntpaHrDEVA==}
 
-  /picomatch@2.3.1:
-    resolution: {integrity: sha512-JU3teHTNjmE2VCGFzuY8EXzCDVwEqB2a8fsIvwaStHhAWJEeVd1o1QD80CU6+ZdEXXSLbSsuLwJjkCBWqRQUVA==}
-    engines: {node: '>=8.6'}
-
   /picomatch@2.3.2:
     resolution: {integrity: sha512-V7+vQEJ06Z+c5tSye8S+nHUfI51xoXIXjHQ99cQtKUkQqqO1kO/KCJUfZXuB47h/YBlDhah2H3hdUGXn8ie0oA==}
     engines: {node: '>=8.6'}
@@ -13596,7 +13600,7 @@ packages:
         optional: true
     dependencies:
       open: 8.4.2
-      picomatch: 2.3.1
+      picomatch: 2.3.2
       rollup: 3.30.0
       source-map: 0.7.4
       yargs: 17.7.2
@@ -13612,7 +13616,7 @@ packages:
         optional: true
     dependencies:
       open: 8.4.2
-      picomatch: 2.3.1
+      picomatch: 2.3.2
       rollup: 4.35.0
       source-map: 0.7.4
       yargs: 17.7.2
@@ -13628,7 +13632,7 @@ packages:
         optional: true
     dependencies:
       open: 8.4.2
-      picomatch: 2.3.1
+      picomatch: 2.3.2
       rollup: 4.63.0
       source-map: 0.7.4
       yargs: 17.7.2
@@ -15264,14 +15268,6 @@ packages:
       acorn: 8.14.1
       webpack-virtual-modules: 0.6.2
 
-  /unplugin@2.2.0:
-    resolution: {integrity: sha512-m1ekpSwuOT5hxkJeZGRxO7gXbXT3gF26NjQ7GdVHoLoF8/nopLcd/QfPigpCy7i51oFHiRJg/CyHhj4vs2+KGw==}
-    engines: {node: '>=18.12.0'}
-    dependencies:
-      acorn: 8.14.1
-      webpack-virtual-modules: 0.6.2
-    dev: true
-
   /unplugin@2.3.11:
     resolution: {integrity: sha512-5uKD0nqiYVzlmCRs01Fhs2BdkEgBS3SAVP6ndrBsuK42iC2+JHyxM05Rm9G8+5mkmRtzMZGY8Ct5+mliZxU/Ww==}
     engines: {node: '>=18.12.0'}
@@ -15282,12 +15278,43 @@ packages:
       webpack-virtual-modules: 0.6.2
     dev: true
 
-  /unplugin@3.0.0:
-    resolution: {integrity: sha512-0Mqk3AT2TZCXWKdcoaufeXNukv2mTrEZExeXlHIOZXdqYoHHr4n51pymnwV8x2BOVxwXbK2HLlI7usrqMpycdg==}
+  /unplugin@3.3.0(rollup@4.35.0)(vite@6.4.3):
+    resolution: {integrity: sha512-qa66K+crbfyE6JK10GjvbJeRrOsuC/JpbnHctfyp/i4oBTxWOzJfRZyDiOk1PtErMFRu8JhsU/wPvOdBNWe5Rg==}
     engines: {node: ^20.19.0 || >=22.12.0}
+    peerDependencies:
+      '@farmfe/core': '*'
+      '@rspack/core': '*'
+      bun-types-no-globals: '*'
+      esbuild: '*'
+      rolldown: '*'
+      rollup: '*'
+      unloader: '*'
+      vite: '*'
+      webpack: '*'
+    peerDependenciesMeta:
+      '@farmfe/core':
+        optional: true
+      '@rspack/core':
+        optional: true
+      bun-types-no-globals:
+        optional: true
+      esbuild:
+        optional: true
+      rolldown:
+        optional: true
+      rollup:
+        optional: true
+      unloader:
+        optional: true
+      vite:
+        optional: true
+      webpack:
+        optional: true
     dependencies:
       '@jridgewell/remapping': 2.3.5
       picomatch: 4.0.7
+      rollup: 4.35.0
+      vite: 6.4.3(@types/node@24.12.0)
       webpack-virtual-modules: 0.6.2
     dev: true
 
@@ -16230,25 +16257,33 @@ packages:
       - universal-cookie
     dev: true
 
-  /vitest-environment-nuxt@1.0.1(typescript@5.3.3)(vite@6.4.3)(vitest@4.1.11):
+  /vitest-environment-nuxt@1.0.1(rollup@4.35.0)(typescript@5.3.3)(vite@6.4.3)(vitest@4.1.11):
     resolution: {integrity: sha512-eBCwtIQriXW5/M49FjqNKfnlJYlG2LWMSNFsRVKomc8CaMqmhQPBS5LZ9DlgYL9T8xIVsiA6RZn2lk7vxov3Ow==}
     dependencies:
-      '@nuxt/test-utils': 4.0.0(typescript@5.3.3)(vite@6.4.3)(vitest@4.1.11)
+      '@nuxt/test-utils': 4.0.0(rollup@4.35.0)(typescript@5.3.3)(vite@6.4.3)(vitest@4.1.11)
     transitivePeerDependencies:
       - '@cucumber/cucumber'
+      - '@farmfe/core'
       - '@jest/globals'
       - '@playwright/test'
+      - '@rspack/core'
       - '@testing-library/vue'
       - '@vitest/ui'
       - '@vue/test-utils'
+      - bun-types-no-globals
       - crossws
+      - esbuild
       - happy-dom
       - jsdom
       - magicast
       - playwright-core
+      - rolldown
+      - rollup
       - typescript
+      - unloader
       - vite
       - vitest
+      - webpack
     dev: true
 
   /vitest@4.1.11(@types/node@24.12.0)(vite@6.4.3):
