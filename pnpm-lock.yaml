@@ -16,7 +16,7 @@ importers:
         version: 0.0.3-beta.3(eslint@8.56.0)(typescript@5.3.3)
       '@nuxt/test-utils':
         specifier: ^4.0.0
-        version: 4.0.0(rollup@4.35.0)(typescript@5.3.3)(vite@6.4.3)(vitest@4.1.11)
+        version: 4.0.0(rollup@4.35.0)(typescript@5.3.3)(vite@6.4.3)(vitest@5.0.0)
       '@types/node':
         specifier: ^24.12.0
         version: 24.12.0
@@ -63,8 +63,8 @@ importers:
         specifier: ^3.5.0
         version: 3.5.0(typescript@5.3.3)(vue@3.5.31)
       vitest:
-        specifier: ^4.0.0
-        version: 4.1.11(@types/node@24.12.0)(vite@6.4.3)
+        specifier: ^5.0.0
+        version: 5.0.0(@types/node@24.12.0)(vite@6.4.3)
 
   docs:
     devDependencies:
@@ -369,14 +369,14 @@ packages:
     engines: {node: '>=6.0.0'}
     dependencies:
       '@jridgewell/gen-mapping': 0.3.8
-      '@jridgewell/trace-mapping': 0.3.25
+      '@jridgewell/trace-mapping': 0.3.31
 
   /@ampproject/remapping@2.3.0:
     resolution: {integrity: sha512-30iZtAPgz+LTIYoeivqYo853f02jBYSd5uGnGpkFV0M3xOt9aN73erkgYAmZU43x4VfqcnLxW9Kpg3R5LC4YYw==}
     engines: {node: '>=6.0.0'}
     dependencies:
       '@jridgewell/gen-mapping': 0.3.8
-      '@jridgewell/trace-mapping': 0.3.25
+      '@jridgewell/trace-mapping': 0.3.31
     dev: true
 
   /@antfu/eslint-config-basic@0.40.0(@typescript-eslint/eslint-plugin@6.2.1)(@typescript-eslint/parser@6.2.1)(eslint@8.56.0)(typescript@5.3.3):
@@ -535,7 +535,7 @@ packages:
       '@babel/traverse': 7.23.4
       '@babel/types': 7.26.9
       convert-source-map: 2.0.0
-      debug: 4.4.0
+      debug: 4.4.3
       gensync: 1.0.0-beta.2
       json5: 2.2.3
       semver: 6.3.1
@@ -571,7 +571,7 @@ packages:
     dependencies:
       '@babel/types': 7.26.9
       '@jridgewell/gen-mapping': 0.3.8
-      '@jridgewell/trace-mapping': 0.3.25
+      '@jridgewell/trace-mapping': 0.3.31
       jsesc: 2.5.2
 
   /@babel/generator@7.26.9:
@@ -581,7 +581,7 @@ packages:
       '@babel/parser': 7.26.9
       '@babel/types': 7.26.9
       '@jridgewell/gen-mapping': 0.3.8
-      '@jridgewell/trace-mapping': 0.3.25
+      '@jridgewell/trace-mapping': 0.3.31
       jsesc: 3.1.0
 
   /@babel/helper-annotate-as-pure@7.22.5:
@@ -1026,7 +1026,7 @@ packages:
       '@babel/helper-split-export-declaration': 7.22.6
       '@babel/parser': 7.26.9
       '@babel/types': 7.26.9
-      debug: 4.4.0
+      debug: 4.4.3
       globals: 11.12.0
     transitivePeerDependencies:
       - supports-color
@@ -1040,7 +1040,7 @@ packages:
       '@babel/parser': 7.26.9
       '@babel/template': 7.26.9
       '@babel/types': 7.26.9
-      debug: 4.4.0
+      debug: 4.4.3
       globals: 11.12.0
     transitivePeerDependencies:
       - supports-color
@@ -2484,8 +2484,8 @@ packages:
     engines: {node: '>=6.0.0'}
     dependencies:
       '@jridgewell/set-array': 1.2.1
-      '@jridgewell/sourcemap-codec': 1.5.0
-      '@jridgewell/trace-mapping': 0.3.25
+      '@jridgewell/sourcemap-codec': 1.5.5
+      '@jridgewell/trace-mapping': 0.3.31
 
   /@jridgewell/remapping@2.3.5:
     resolution: {integrity: sha512-LI9u/+laYG4Ds1TDKSJW2YPrIlcVYOwi2fUC6xB43lueCjgxV4lffOCZCtYFiH6TNOX+tQKXx97T4IKHbhyHEQ==}
@@ -2506,29 +2506,24 @@ packages:
     resolution: {integrity: sha512-b+fsZXeLYi9fEULmfBrhxn4IrPlINf8fiNarzTof004v3lFdntdwa9PF7vFJqm3mg7s+ScJMxXaE3Acp1irZcg==}
     dependencies:
       '@jridgewell/gen-mapping': 0.3.8
-      '@jridgewell/trace-mapping': 0.3.25
-
-  /@jridgewell/sourcemap-codec@1.4.15:
-    resolution: {integrity: sha512-eF2rxCRulEKXHTRiDrDy6erMYWqNw4LPdQ8UQA4huuxaQsVeRPFl2oM8oDGxMFhJUWZf9McpLtJasDDZb/Bpeg==}
+      '@jridgewell/trace-mapping': 0.3.31
 
   /@jridgewell/sourcemap-codec@1.5.0:
     resolution: {integrity: sha512-gv3ZRaISU3fjPAgNsriBRqGWQL6quFx04YMPW/zD8XMLsU32mhCCbfbO6KZFLjvYpCZ8zyDEgqsgf+PwPaM7GQ==}
+    dev: true
 
   /@jridgewell/sourcemap-codec@1.5.5:
     resolution: {integrity: sha512-cYQ9310grqxueWbl+WuIUIaiUaDcj7WOq5fVhEljNVgRfOUhY9fy2zTvfoqWsnebh8Sl70VScFbICvJnLKB0Og==}
 
-  /@jridgewell/trace-mapping@0.3.25:
-    resolution: {integrity: sha512-vNk6aEwybGtawWmy/PzwnGDOjCkLWSD2wqvjGGAgOAwCGWySYXfYoxt00IJkTF+8Lb57DwOb3Aa0o9CApepiYQ==}
-    dependencies:
-      '@jridgewell/resolve-uri': 3.1.2
-      '@jridgewell/sourcemap-codec': 1.5.0
+  /@jridgewell/sourcemap-codec@1.6.0:
+    resolution: {integrity: sha512-T7jf+5zgsZHwNJ4lvQ7/aezbyk0nNX+zJVWpmHA7VYsEx7a7qr5Rg5IbtJFqkgze5Y2sruq1RUY8Q837Od7iFw==}
+    dev: true
 
   /@jridgewell/trace-mapping@0.3.31:
     resolution: {integrity: sha512-zzNR+SdQSDJzc8joaeP8QQoCQr8NuYx2dIIytl1QeBEZHJ9uW6hebsrYgbz8hJwUQao3TWCMtmfV8Nu1twOLAw==}
     dependencies:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.5
-    dev: true
 
   /@kwsites/file-exists@1.1.1:
     resolution: {integrity: sha512-m9/5YGR18lIwxSFDwfE3oA7bWuq9kdau6ugN4H2rJeyhFQZcG9AgSHkQtSD15a8WvTgfz9aikZMrKPHvbpqFiw==}
@@ -2678,7 +2673,7 @@ packages:
       pkg-types: 1.3.1
       prompts: 2.4.2
       rc9: 2.1.2
-      semver: 7.7.4
+      semver: 7.8.5
     dev: true
 
   /@nuxt/devtools-wizard@2.6.4:
@@ -2878,7 +2873,7 @@ packages:
       rc9: 3.0.0
       scule: 1.3.0
       semver: 7.7.4
-      tinyglobby: 0.2.15
+      tinyglobby: 0.2.17
       ufo: 1.6.3
       unctx: 2.5.0
       untyped: 2.0.0
@@ -2929,7 +2924,7 @@ packages:
       pathe: 1.1.1
       pkg-types: 1.3.1
       scule: 1.0.0
-      semver: 7.7.1
+      semver: 7.8.5
       unctx: 2.3.1
       unimport: 3.1.0(rollup@3.30.0)
       untyped: 1.3.2
@@ -2955,7 +2950,7 @@ packages:
       pathe: 1.1.1
       pkg-types: 1.3.1
       scule: 1.0.0
-      semver: 7.7.1
+      semver: 7.8.5
       unctx: 2.3.1
       unimport: 3.1.0(rollup@4.35.0)
       untyped: 1.3.2
@@ -3064,7 +3059,7 @@ packages:
       rc9: 3.0.0
       scule: 1.3.0
       semver: 7.7.4
-      tinyglobby: 0.2.15
+      tinyglobby: 0.2.17
       ufo: 1.6.3
       unctx: 2.5.0
       untyped: 2.0.0
@@ -3112,7 +3107,7 @@ packages:
       pathe: 1.1.2
       pkg-types: 1.3.1
       postcss-import-resolver: 2.0.0
-      std-env: 3.7.0
+      std-env: 3.10.0
       ufo: 1.5.4
       unimport: 3.7.1(rollup@3.30.0)
       untyped: 1.4.0
@@ -3130,7 +3125,7 @@ packages:
       pathe: 1.1.1
       pkg-types: 1.3.1
       postcss-import-resolver: 2.0.0
-      std-env: 3.8.1
+      std-env: 3.10.0
       ufo: 1.1.2
       unimport: 3.1.0(rollup@3.30.0)
       untyped: 1.3.2
@@ -3148,7 +3143,7 @@ packages:
       pathe: 1.1.1
       pkg-types: 1.3.1
       postcss-import-resolver: 2.0.0
-      std-env: 3.8.1
+      std-env: 3.10.0
       ufo: 1.1.2
       unimport: 3.1.0(rollup@4.35.0)
       untyped: 1.3.2
@@ -3167,7 +3162,7 @@ packages:
       pathe: 1.1.1
       pkg-types: 1.0.3
       postcss-import-resolver: 2.0.0
-      std-env: 3.4.3
+      std-env: 3.10.0
       ufo: 1.3.0
       unimport: 3.3.0(rollup@4.35.0)
       untyped: 1.4.0
@@ -3187,7 +3182,7 @@ packages:
       pathe: 1.1.2
       pkg-types: 1.3.1
       scule: 1.2.0
-      std-env: 3.8.1
+      std-env: 3.10.0
       ufo: 1.5.4
       unimport: 3.7.1(rollup@3.30.0)
       untyped: 1.4.0
@@ -3206,7 +3201,7 @@ packages:
       pathe: 1.1.2
       pkg-types: 1.0.3
       scule: 1.2.0
-      std-env: 3.8.1
+      std-env: 3.10.0
       ufo: 1.5.4
       unimport: 3.7.1(rollup@4.35.0)
       untyped: 1.4.0
@@ -3237,7 +3232,7 @@ packages:
       ofetch: 1.3.3
       parse-git-config: 3.0.0
       rc9: 2.1.2
-      std-env: 3.8.1
+      std-env: 3.10.0
     transitivePeerDependencies:
       - rollup
       - supports-color
@@ -3265,7 +3260,7 @@ packages:
       ofetch: 1.3.3
       parse-git-config: 3.0.0
       rc9: 2.1.2
-      std-env: 3.8.1
+      std-env: 3.10.0
     transitivePeerDependencies:
       - rollup
       - supports-color
@@ -3294,7 +3289,7 @@ packages:
       parse-git-config: 3.0.0
       pathe: 1.1.1
       rc9: 2.1.2
-      std-env: 3.4.3
+      std-env: 3.10.0
     transitivePeerDependencies:
       - rollup
       - supports-color
@@ -3320,13 +3315,13 @@ packages:
       parse-git-config: 3.0.0
       pathe: 1.1.2
       rc9: 2.1.2
-      std-env: 3.7.0
+      std-env: 3.10.0
     transitivePeerDependencies:
       - rollup
       - supports-color
     dev: true
 
-  /@nuxt/test-utils@4.0.0(rollup@4.35.0)(typescript@5.3.3)(vite@6.4.3)(vitest@4.1.11):
+  /@nuxt/test-utils@4.0.0(rollup@4.35.0)(typescript@5.3.3)(vite@6.4.3)(vitest@5.0.0):
     resolution: {integrity: sha512-QJfyCiqYxflUKA5xlEGuXdDApTBhJxoPXxYePIDtA90hkmKbhYs/mrMM+Bi9LiUrI/cCJOPRyIx9jOzhMvTIgg==}
     engines: {node: ^20.19.0 || ^22.12.0 || >=24.0.0}
     peerDependencies:
@@ -3389,8 +3384,8 @@ packages:
       tinyexec: 1.0.4
       ufo: 1.6.3
       unplugin: 3.3.0(rollup@4.35.0)(vite@6.4.3)
-      vitest: 4.1.11(@types/node@24.12.0)(vite@6.4.3)
-      vitest-environment-nuxt: 1.0.1(rollup@4.35.0)(typescript@5.3.3)(vite@6.4.3)(vitest@4.1.11)
+      vitest: 5.0.0(@types/node@24.12.0)(vite@6.4.3)
+      vitest-environment-nuxt: 1.0.1(rollup@4.35.0)(typescript@5.3.3)(vite@6.4.3)(vitest@5.0.0)
       vue: 3.5.31(typescript@5.3.3)
     transitivePeerDependencies:
       - '@farmfe/core'
@@ -3437,7 +3432,7 @@ packages:
       get-port-please: 3.1.2
       h3: 1.10.0
       knitwork: 1.0.0
-      magic-string: 0.30.5
+      magic-string: 0.30.21
       mlly: 1.5.0
       ohash: 1.1.3
       pathe: 1.1.2
@@ -3447,7 +3442,7 @@ packages:
       postcss-import: 15.1.0(postcss@8.5.3)
       postcss-url: 10.1.3(postcss@8.5.3)
       rollup-plugin-visualizer: 5.12.0(rollup@3.30.0)
-      std-env: 3.7.0
+      std-env: 3.10.0
       strip-literal: 1.3.0
       ufo: 1.5.4
       unplugin: 1.16.1
@@ -3499,7 +3494,7 @@ packages:
       get-port-please: 3.1.2
       h3: 1.10.0
       knitwork: 1.0.0
-      magic-string: 0.30.1
+      magic-string: 0.30.21
       mlly: 1.4.0
       ohash: 1.1.2
       pathe: 1.1.1
@@ -3509,7 +3504,7 @@ packages:
       postcss-import: 15.1.0(postcss@8.5.26)
       postcss-url: 10.1.3(postcss@8.5.26)
       rollup-plugin-visualizer: 5.12.0(rollup@4.35.0)
-      std-env: 3.8.1
+      std-env: 3.10.0
       strip-literal: 1.0.1
       ufo: 1.1.2
       unplugin: 1.16.1
@@ -3560,7 +3555,7 @@ packages:
       get-port-please: 3.1.2
       h3: 1.10.0
       knitwork: 1.0.0
-      magic-string: 0.30.3
+      magic-string: 0.30.21
       mlly: 1.4.2
       ohash: 1.1.3
       pathe: 1.1.1
@@ -3570,7 +3565,7 @@ packages:
       postcss-import: 15.1.0(postcss@8.5.26)
       postcss-url: 10.1.3(postcss@8.5.26)
       rollup-plugin-visualizer: 5.12.0(rollup@4.35.0)
-      std-env: 3.4.3
+      std-env: 3.10.0
       strip-literal: 1.3.0
       ufo: 1.3.0
       unplugin: 1.16.1
@@ -3622,7 +3617,7 @@ packages:
       get-port-please: 3.2.0
       h3: 1.10.0
       knitwork: 1.0.0
-      magic-string: 0.30.5
+      magic-string: 0.30.21
       mlly: 1.5.0
       ohash: 1.1.3
       pathe: 1.1.2
@@ -3630,7 +3625,7 @@ packages:
       pkg-types: 1.0.3
       postcss: 8.5.26
       rollup-plugin-visualizer: 5.12.0(rollup@4.35.0)
-      std-env: 3.7.0
+      std-env: 3.10.0
       strip-literal: 2.0.0
       ufo: 1.3.2
       unplugin: 1.16.1
@@ -4126,7 +4121,7 @@ packages:
       estree-walker: 2.0.2
       glob: 8.1.0
       is-reference: 1.2.1
-      magic-string: 0.30.3
+      magic-string: 0.30.21
       rollup: 3.30.0
     dev: true
 
@@ -4144,7 +4139,7 @@ packages:
       estree-walker: 2.0.2
       glob: 8.1.0
       is-reference: 1.2.1
-      magic-string: 0.30.3
+      magic-string: 0.30.21
       rollup: 4.63.0
     dev: true
 
@@ -4193,7 +4188,7 @@ packages:
     dependencies:
       '@rollup/pluginutils': 5.1.4(rollup@3.30.0)
       estree-walker: 2.0.2
-      magic-string: 0.30.3
+      magic-string: 0.30.21
       rollup: 3.30.0
     dev: true
 
@@ -4208,7 +4203,7 @@ packages:
     dependencies:
       '@rollup/pluginutils': 5.1.4(rollup@4.63.0)
       estree-walker: 2.0.2
-      magic-string: 0.30.3
+      magic-string: 0.30.21
       rollup: 4.63.0
     dev: true
 
@@ -4375,7 +4370,7 @@ packages:
         optional: true
     dependencies:
       '@rollup/pluginutils': 5.1.4(rollup@3.30.0)
-      magic-string: 0.30.17
+      magic-string: 0.30.21
       rollup: 3.30.0
 
   /@rollup/plugin-replace@5.0.5(rollup@4.35.0):
@@ -4388,7 +4383,7 @@ packages:
         optional: true
     dependencies:
       '@rollup/pluginutils': 5.1.4(rollup@4.35.0)
-      magic-string: 0.30.17
+      magic-string: 0.30.21
       rollup: 4.35.0
 
   /@rollup/plugin-replace@5.0.5(rollup@4.63.0):
@@ -4401,7 +4396,7 @@ packages:
         optional: true
     dependencies:
       '@rollup/pluginutils': 5.1.4(rollup@4.63.0)
-      magic-string: 0.30.17
+      magic-string: 0.30.21
       rollup: 4.63.0
     dev: true
 
@@ -5122,7 +5117,7 @@ packages:
     dependencies:
       '@typescript-eslint/typescript-estree': 6.2.1(typescript@5.3.3)
       '@typescript-eslint/utils': 6.2.1(eslint@8.56.0)(typescript@5.3.3)
-      debug: 4.4.0
+      debug: 4.4.3
       eslint: 8.56.0
       ts-api-utils: 1.0.1(typescript@5.3.3)
       typescript: 5.3.3
@@ -5172,7 +5167,7 @@ packages:
     dependencies:
       '@typescript-eslint/types': 6.2.1
       '@typescript-eslint/visitor-keys': 6.2.1
-      debug: 4.4.0
+      debug: 4.4.3
       globby: 11.1.0
       is-glob: 4.0.3
       semver: 7.8.5
@@ -5215,7 +5210,7 @@ packages:
       '@typescript-eslint/types': 6.2.1
       '@typescript-eslint/typescript-estree': 6.2.1(typescript@5.3.3)
       eslint: 8.56.0
-      semver: 7.7.1
+      semver: 7.8.5
     transitivePeerDependencies:
       - supports-color
       - typescript
@@ -5617,19 +5612,8 @@ packages:
       vue: 3.4.15(typescript@5.3.3)
     dev: false
 
-  /@vitest/expect@4.1.11:
-    resolution: {integrity: sha512-VX2x5vNJXET47KAFzwERI+KRMtTTCSWTfSMKsW7JsUsXV4psq++e3DvZpuTDOpHcxytiDs6p2nhVb2tVDiiUYw==}
-    dependencies:
-      '@standard-schema/spec': 1.1.0
-      '@types/chai': 5.2.3
-      '@vitest/spy': 4.1.11
-      '@vitest/utils': 4.1.11
-      chai: 6.2.2
-      tinyrainbow: 3.1.1
-    dev: true
-
-  /@vitest/mocker@4.1.11(vite@6.4.3):
-    resolution: {integrity: sha512-2XJVD55d1o5AZous5CCGKS74g/riOj9odEt2bQpCVZeblHyHdnMeFl4jl0XjU21stf4mbjUkew2eXQZt65g5CQ==}
+  /@vitest/mocker@5.0.0(vite@6.4.3):
+    resolution: {integrity: sha512-66PGTMIiVJP3t4a5yxU9qPtf7MdTBs8jmToMvy+HVflB3Yy13WJZTtPePdvU+wjRV02SKK5doLbSA6o9pwOmiA==}
     peerDependencies:
       msw: ^2.4.9
       vite: ^6.0.0 || ^7.0.0 || ^8.0.0
@@ -5639,44 +5623,15 @@ packages:
       vite:
         optional: true
     dependencies:
-      '@vitest/spy': 4.1.11
+      '@jridgewell/trace-mapping': 0.3.31
+      '@vitest/spy': 5.0.0
       estree-walker: 3.0.3
-      magic-string: 0.30.21
+      magic-string: 1.3.2
       vite: 6.4.3(@types/node@24.12.0)
     dev: true
 
-  /@vitest/pretty-format@4.1.11:
-    resolution: {integrity: sha512-yiZzPbGTS9Sr/JpFl8zHrcIkAofNbFV6k21vIgQN/cY/oxZeXhJv5sc/MBJ5jFKWmWs+oJHw0UXLZjmf931+Vw==}
-    dependencies:
-      tinyrainbow: 3.1.1
-    dev: true
-
-  /@vitest/runner@4.1.11:
-    resolution: {integrity: sha512-LztvUgdwMNJMIkj3hQnnxiC2Xy1zNxq928W/xhjCLaNCzqTZOudjwbQf6v9IntZGPw132i2Lq2rgTRZHD3JHNw==}
-    dependencies:
-      '@vitest/utils': 4.1.11
-      pathe: 2.0.3
-    dev: true
-
-  /@vitest/snapshot@4.1.11:
-    resolution: {integrity: sha512-pN7ikn1ON7h8ee4gIAp4AzyK+zBtJPzVbqOgu5LCEh4VaJVbPQcgYQYJIMGQPXVeJJq1fnfazis7a5pFNPahog==}
-    dependencies:
-      '@vitest/pretty-format': 4.1.11
-      '@vitest/utils': 4.1.11
-      magic-string: 0.30.21
-      pathe: 2.0.3
-    dev: true
-
-  /@vitest/spy@4.1.11:
-    resolution: {integrity: sha512-apNa/prQy2qCeywhnixOHPRCgGNhvg7T4Dapfl1GahLp/R+uhBm5cPyFoNVyqsNd2h1nJxL6BqqdIjiABL60YA==}
-    dev: true
-
-  /@vitest/utils@4.1.11:
-    resolution: {integrity: sha512-zTCVGpyFsGWBhllOyKlTw/vnr6D9qxsfSDyfbyZmTyjHw5N/VuvzHpHoQjm2ZJzn4RJgx5w4r7V0er69CmLgPQ==}
-    dependencies:
-      '@vitest/pretty-format': 4.1.11
-      convert-source-map: 2.0.0
-      tinyrainbow: 3.1.1
+  /@vitest/spy@5.0.0:
+    resolution: {integrity: sha512-uy+luWBAPw9XfthoHi5AkfHUnuPYEESjl0p/r+meoBnU8bxg5GDQ3Ey8MjcJ6sqahkL4PFyrvfMJJBw7LbU06g==}
     dev: true
 
   /@volar/language-core@1.11.1:
@@ -6739,7 +6694,7 @@ packages:
   /builtins@5.0.1:
     resolution: {integrity: sha512-qwVpFEHNfhYJIzNRBvd2C1kyo6jz3ZSMPyyuR47OPdiKWlbYnZNyDWuyR175qDnAJLiCo5fBBqPb3RiXgWlkOQ==}
     dependencies:
-      semver: 7.7.3
+      semver: 7.8.5
     dev: true
 
   /bumpp@12.3.0:
@@ -7262,7 +7217,7 @@ packages:
       conventional-commits-filter: 5.0.0
       handlebars: 4.7.7
       meow: 13.2.0
-      semver: 7.7.3
+      semver: 7.8.5
     dev: true
 
   /conventional-changelog@6.0.0:
@@ -9862,7 +9817,7 @@ packages:
   /is-core-module@2.13.1:
     resolution: {integrity: sha512-hHrIjvZsftOsvKSn2TRYl63zvxsgE0K+0mYMoH6gD4omR5IWB2KynivBQczo3+wF1cCkjzvptnI9Q0sPU66ilw==}
     dependencies:
-      hasown: 2.0.2
+      hasown: 2.0.4
     dev: true
 
   /is-core-module@2.16.1:
@@ -10359,7 +10314,7 @@ packages:
       mlly: 1.7.4
       node-forge: 1.3.1
       pathe: 1.1.1
-      std-env: 3.8.1
+      std-env: 3.10.0
       ufo: 1.5.4
       untun: 0.1.2
       uqr: 0.1.2
@@ -10489,19 +10444,20 @@ packages:
     resolution: {integrity: sha512-8UnnX2PeRAPZuN12svgR9j7M1uWMovg/CEnIwIG0LFkXSJJe4PdfUGiTGl8V9bsBHFUtfVINcSyYxd7q+kx9fA==}
     engines: {node: '>=12'}
     dependencies:
-      '@jridgewell/sourcemap-codec': 1.5.0
+      '@jridgewell/sourcemap-codec': 1.5.5
 
   /magic-string@0.30.1:
     resolution: {integrity: sha512-mbVKXPmS0z0G4XqFDCTllmDQ6coZzn94aMlb0o/A4HEHJCKcanlDZwYJgwnkmgD3jyWhUgj9VsPrfd972yPffA==}
     engines: {node: '>=12'}
     dependencies:
-      '@jridgewell/sourcemap-codec': 1.4.15
+      '@jridgewell/sourcemap-codec': 1.5.5
     dev: false
 
   /magic-string@0.30.17:
     resolution: {integrity: sha512-sNPKHvyjVf7gyjwS4xGTaW/mCnF8wnjtifKBEhxfZ7E/S8tQ0rssrwGNn6q8JH/ohItJfSQp9mBtQYuTlH5QnA==}
     dependencies:
       '@jridgewell/sourcemap-codec': 1.5.0
+    dev: true
 
   /magic-string@0.30.21:
     resolution: {integrity: sha512-vd2F4YUyEXKGcLHoq+TEyCjxueSeHnFxyyjNp80yg0XV4vUhnDer/lvvlqM/arB5bXQN5K2/3oinyCRyx8T2CQ==}
@@ -10512,14 +10468,20 @@ packages:
     resolution: {integrity: sha512-B7xGbll2fG/VjP+SWg4sX3JynwIU0mjoTc6MPpKNuIvftk6u6vqhDnk1R80b8C2GBR6ywqy+1DcKBrevBg+bmw==}
     engines: {node: '>=12'}
     dependencies:
-      '@jridgewell/sourcemap-codec': 1.5.0
+      '@jridgewell/sourcemap-codec': 1.5.5
     dev: true
 
   /magic-string@0.30.5:
     resolution: {integrity: sha512-7xlpfBaQaP/T6Vh8MO/EqXSW5En6INHEvEXQiuff7Gku0PWjU3uf6w/j9o7O+SpB5fOAkrI5HeoNgwjEO0pFsA==}
     engines: {node: '>=12'}
     dependencies:
-      '@jridgewell/sourcemap-codec': 1.4.15
+      '@jridgewell/sourcemap-codec': 1.5.5
+
+  /magic-string@1.3.2:
+    resolution: {integrity: sha512-rZJrVxZ8cnWz3Mlor980ckHFN60rm/eyjVOpeDAH2z1DsRNbve2o4AB7bGafQvGSdCK90gEfUdiMct4BCKSZTw==}
+    dependencies:
+      '@jridgewell/sourcemap-codec': 1.6.0
+    dev: true
 
   /magicast@0.3.3:
     resolution: {integrity: sha512-ZbrP1Qxnpoes8sz47AM0z08U+jW6TyRgZzcWy3Ma3vDhJttwMwAFDMMQFobwdBxByBD46JYmxRzeF7w2+wJEuw==}
@@ -11054,7 +11016,7 @@ packages:
       klona: 2.0.6
       knitwork: 1.0.0
       listhen: 1.5.5
-      magic-string: 0.30.3
+      magic-string: 0.30.21
       mime: 3.0.0
       mlly: 1.4.2
       mri: 1.2.0
@@ -11073,7 +11035,7 @@ packages:
       semver: 7.7.1
       serve-placeholder: 2.0.1
       serve-static: 1.15.0
-      std-env: 3.4.3
+      std-env: 3.10.0
       ufo: 1.3.0
       uncrypto: 0.1.3
       unctx: 2.3.1
@@ -11145,7 +11107,7 @@ packages:
       klona: 2.0.6
       knitwork: 1.0.0
       listhen: 1.5.5
-      magic-string: 0.30.5
+      magic-string: 0.30.21
       mime: 3.0.0
       mlly: 1.5.0
       mri: 1.2.0
@@ -11164,7 +11126,7 @@ packages:
       semver: 7.7.4
       serve-placeholder: 2.0.1
       serve-static: 1.15.0
-      std-env: 3.7.0
+      std-env: 3.10.0
       ufo: 1.3.2
       uncrypto: 0.1.3
       unctx: 2.3.1
@@ -11274,8 +11236,8 @@ packages:
     engines: {node: ^16.14.0 || >=18.0.0}
     dependencies:
       hosted-git-info: 7.0.0
-      is-core-module: 2.16.1
-      semver: 7.7.3
+      is-core-module: 2.16.2
+      semver: 7.8.5
       validate-npm-package-license: 3.0.4
     dev: true
 
@@ -11816,7 +11778,7 @@ packages:
     dependencies:
       citty: 0.2.1
       pathe: 2.0.3
-      tinyexec: 1.0.4
+      tinyexec: 1.3.1
     dev: true
 
   /object-assign@4.1.1:
@@ -13500,7 +13462,7 @@ packages:
     resolution: {integrity: sha512-P8ur/gp/AmbEzjr729bZnLjXK5Z+4P0zhIJgBgzqRih7hL7BOukHGtSTA3ACMY467GRFz3duQsi0bDZdR7DKdw==}
     hasBin: true
     dependencies:
-      is-core-module: 2.13.1
+      is-core-module: 2.16.2
       path-parse: 1.0.7
       supports-preserve-symlinks-flag: 1.0.0
     dev: true
@@ -13568,7 +13530,7 @@ packages:
       rollup: ^3.25
       typescript: ^4.5 || ^5.0
     dependencies:
-      magic-string: 0.30.3
+      magic-string: 0.30.21
       rollup: 3.30.0
       typescript: 5.9.3
     optionalDependencies:
@@ -13837,6 +13799,7 @@ packages:
     resolution: {integrity: sha512-SdsKMrI9TdgjdweUSR9MweHA4EJ8YxHn8DFaDisvhVlUOe4BF1tLD7GAj0lIqWVl+dPb/rExr0Btby5loQm20Q==}
     engines: {node: '>=10'}
     hasBin: true
+    dev: false
 
   /semver@7.7.4:
     resolution: {integrity: sha512-vFKC2IEtQnVhpT78h1Yp8wzwrf8CM+MzKMHGJZfBtzhZNycRFnXsHk6E5TxIkkMsgNS7mdX3AGB7x2QM2di4lA==}
@@ -14151,12 +14114,18 @@ packages:
 
   /std-env@3.7.0:
     resolution: {integrity: sha512-JPbdCEQLj1w5GilpiHAx3qJvFndqybBysA3qUOnznweH4QbNYUsW/ea8QzSrnh0vNsezMMw5bcVool8lM0gwzg==}
+    dev: true
 
   /std-env@3.8.1:
     resolution: {integrity: sha512-vj5lIj3Mwf9D79hBkltk5qmkFI+biIKWS2IBxEyEU3AX1tUf7AoL8nSazCOiiqQsGKIq01SClsKEzweu34uwvA==}
+    dev: false
 
   /std-env@4.0.0:
     resolution: {integrity: sha512-zUMPtQ/HBY3/50VbpkupYHbRroTRZJPRLvreamgErJVys0ceuzMkD44J/QjqhHjOzK42GQ3QZIeFG1OYfOtKqQ==}
+    dev: true
+
+  /std-env@4.2.0:
+    resolution: {integrity: sha512-oCUKSupKTHX53EyjDtuZQ64pjLJ6yYCtpmEw0goYxtjG9KpbRe8KAsl2tBUGU9DyMcJ0RwJ8GqJAFzMXcXW1Rw==}
     dev: true
 
   /stop-iteration-iterator@1.1.0:
@@ -14501,8 +14470,9 @@ packages:
   /tiny-invariant@1.3.1:
     resolution: {integrity: sha512-AD5ih2NlSssTCwsMznbvwMZpJ1cbhkGd2uueNxzv2jDlEeZdU04JQfRnggJQ8DrcVBGjAsCKwFBbDlVNtEMlzw==}
 
-  /tinybench@2.9.0:
-    resolution: {integrity: sha512-0+DUvqWMValLmha6lr4kD8iAMK1HzV0/aKnCtWb9v9641TnP/MFb7Pc2bxoxQjTXAErryXVgUOfv2YqNllqGeg==}
+  /tinybench@6.1.4:
+    resolution: {integrity: sha512-9APumHG7r4yOk4X4WlkmE71aZcv1gvin1czO3OQ1U9iJcFA5Ja/ygyb0vPOVHTthFozUYs8CLoLUlM8grb2lTQ==}
+    engines: {node: '>=20.0.0'}
     dev: true
 
   /tinyexec@0.3.2:
@@ -14515,6 +14485,11 @@ packages:
 
   /tinyexec@1.2.4:
     resolution: {integrity: sha512-SHf/r48b7vOrjve9PxJo3MN5v5yuyjHvdUcrQffT3WXMUfnGmHDVbC4k3sHJaJTgZCwpUplIaAo5ANtMyp3YHg==}
+    engines: {node: '>=18'}
+    dev: true
+
+  /tinyexec@1.3.0:
+    resolution: {integrity: sha512-QKAl9m8gWWGHV8jZcPeym6j+XULi6tOf1mT83WYJ4Lk2ytW/uwAWkrP0uFsdoYMdueVJ0qs26wZ+23xeB4ibNQ==}
     engines: {node: '>=18'}
     dev: true
 
@@ -14545,11 +14520,6 @@ packages:
     dependencies:
       fdir: 6.5.0(picomatch@4.0.7)
       picomatch: 4.0.7
-
-  /tinyrainbow@3.1.1:
-    resolution: {integrity: sha512-yau8yJdTt989Mm0Bd/236QnzEiPf2xLLTqUZRUJOo/3CB078LSwzei343DgtJVmfJKJE3TMINY1u42SQsP6mXw==}
-    engines: {node: '>=14.0.0'}
-    dev: true
 
   /to-fast-properties@2.0.0:
     resolution: {integrity: sha512-/OaKK0xYrs3DmxRYqL/yDc+FxFUVYhDlXMhRmv3z915w2HF1tnN1omB354j8VUGO/hbRzyD6Y3sA7v7GS/ceog==}
@@ -14908,7 +14878,7 @@ packages:
     dependencies:
       acorn: 8.14.1
       estree-walker: 3.0.3
-      magic-string: 0.30.17
+      magic-string: 0.30.21
       unplugin: 1.16.1
 
   /unctx@2.5.0:
@@ -14996,7 +14966,7 @@ packages:
       escape-string-regexp: 5.0.0
       fast-glob: 3.3.2
       local-pkg: 0.4.3
-      magic-string: 0.30.5
+      magic-string: 0.30.21
       mlly: 1.5.0
       pathe: 1.1.2
       pkg-types: 1.3.1
@@ -15014,7 +14984,7 @@ packages:
       escape-string-regexp: 5.0.0
       fast-glob: 3.3.3
       local-pkg: 0.4.3
-      magic-string: 0.30.1
+      magic-string: 0.30.21
       mlly: 1.4.0
       pathe: 1.1.1
       pkg-types: 1.3.1
@@ -15032,7 +15002,7 @@ packages:
       escape-string-regexp: 5.0.0
       fast-glob: 3.3.3
       local-pkg: 0.4.3
-      magic-string: 0.30.1
+      magic-string: 0.30.21
       mlly: 1.4.0
       pathe: 1.1.1
       pkg-types: 1.3.1
@@ -15052,7 +15022,7 @@ packages:
       estree-walker: 3.0.3
       fast-glob: 3.3.3
       local-pkg: 1.1.2
-      magic-string: 0.30.17
+      magic-string: 0.30.21
       mlly: 1.8.2
       pathe: 2.0.3
       picomatch: 4.0.7
@@ -15071,7 +15041,7 @@ packages:
       escape-string-regexp: 5.0.0
       fast-glob: 3.3.3
       local-pkg: 0.4.3
-      magic-string: 0.30.3
+      magic-string: 0.30.21
       mlly: 1.4.2
       pathe: 1.1.1
       pkg-types: 1.0.3
@@ -15089,7 +15059,7 @@ packages:
       escape-string-regexp: 5.0.0
       fast-glob: 3.3.3
       local-pkg: 0.4.3
-      magic-string: 0.30.3
+      magic-string: 0.30.21
       mlly: 1.4.2
       pathe: 1.1.1
       pkg-types: 1.0.3
@@ -15109,7 +15079,7 @@ packages:
       estree-walker: 3.0.3
       fast-glob: 3.3.3
       local-pkg: 0.5.1
-      magic-string: 0.30.17
+      magic-string: 0.30.21
       mlly: 1.7.4
       pathe: 1.1.2
       pkg-types: 1.0.3
@@ -15128,7 +15098,7 @@ packages:
       estree-walker: 3.0.3
       fast-glob: 3.3.3
       local-pkg: 0.5.1
-      magic-string: 0.30.17
+      magic-string: 0.30.21
       mlly: 1.7.4
       pathe: 1.1.2
       pkg-types: 1.0.3
@@ -15148,7 +15118,7 @@ packages:
       estree-walker: 3.0.3
       fast-glob: 3.3.3
       local-pkg: 0.5.1
-      magic-string: 0.30.17
+      magic-string: 0.30.21
       mlly: 1.7.4
       pathe: 1.1.2
       pkg-types: 1.0.3
@@ -15662,7 +15632,7 @@ packages:
       lodash.debounce: 4.0.8
       lodash.pick: 4.4.0
       npm-run-path: 4.0.1
-      semver: 7.7.3
+      semver: 7.8.5
       strip-ansi: 6.0.1
       tiny-invariant: 1.3.1
       typescript: 5.3.3
@@ -15715,7 +15685,7 @@ packages:
       lodash.debounce: 4.0.8
       lodash.pick: 4.4.0
       npm-run-path: 4.0.1
-      semver: 7.7.3
+      semver: 7.8.5
       strip-ansi: 6.0.1
       tiny-invariant: 1.3.1
       typescript: 5.3.3
@@ -15768,7 +15738,7 @@ packages:
       lodash.debounce: 4.0.8
       lodash.pick: 4.4.0
       npm-run-path: 4.0.1
-      semver: 7.7.3
+      semver: 7.8.5
       strip-ansi: 6.0.1
       tiny-invariant: 1.3.1
       typescript: 5.3.3
@@ -15921,7 +15891,7 @@ packages:
       '@vue/babel-plugin-jsx': 1.4.0(@babel/core@7.26.9)
       '@vue/compiler-dom': 3.5.13
       kolorist: 1.8.0
-      magic-string: 0.30.17
+      magic-string: 0.30.21
       vite: 6.4.3(@types/node@24.12.0)
     transitivePeerDependencies:
       - supports-color
@@ -16257,10 +16227,10 @@ packages:
       - universal-cookie
     dev: true
 
-  /vitest-environment-nuxt@1.0.1(rollup@4.35.0)(typescript@5.3.3)(vite@6.4.3)(vitest@4.1.11):
+  /vitest-environment-nuxt@1.0.1(rollup@4.35.0)(typescript@5.3.3)(vite@6.4.3)(vitest@5.0.0):
     resolution: {integrity: sha512-eBCwtIQriXW5/M49FjqNKfnlJYlG2LWMSNFsRVKomc8CaMqmhQPBS5LZ9DlgYL9T8xIVsiA6RZn2lk7vxov3Ow==}
     dependencies:
-      '@nuxt/test-utils': 4.0.0(rollup@4.35.0)(typescript@5.3.3)(vite@6.4.3)(vitest@4.1.11)
+      '@nuxt/test-utils': 4.0.0(rollup@4.35.0)(typescript@5.3.3)(vite@6.4.3)(vitest@5.0.0)
     transitivePeerDependencies:
       - '@cucumber/cucumber'
       - '@farmfe/core'
@@ -16286,23 +16256,23 @@ packages:
       - webpack
     dev: true
 
-  /vitest@4.1.11(@types/node@24.12.0)(vite@6.4.3):
-    resolution: {integrity: sha512-fhACrNXUidIbGSBr5FlbuBkO7VWC1ZyLl0DO4CU2DrQoAPxX84Ysxs+HeGQpii5lZWV1Q4gBZTTu49mF+A6Edw==}
-    engines: {node: ^20.0.0 || ^22.0.0 || >=24.0.0}
+  /vitest@5.0.0(@types/node@24.12.0)(vite@6.4.3):
+    resolution: {integrity: sha512-gpsMNoRhMjMktVxPtstOH4/PJuPyovVaMDr4oDilXaGH1EcqM2OE96SoHT2VIQ6fTGtTjqmHDrEu2X9RQiXf8Q==}
+    engines: {node: ^22.12.0 || ^24.0.0 || >=26.0.0}
     hasBin: true
     peerDependencies:
       '@edge-runtime/vm': '*'
       '@opentelemetry/api': ^1.9.0
-      '@types/node': ^20.0.0 || ^22.0.0 || >=24.0.0
-      '@vitest/browser-playwright': 4.1.11
-      '@vitest/browser-preview': 4.1.11
-      '@vitest/browser-webdriverio': 4.1.11
-      '@vitest/coverage-istanbul': 4.1.11
-      '@vitest/coverage-v8': 4.1.11
-      '@vitest/ui': 4.1.11
+      '@types/node': ^22.0.0 || >=24.0.0
+      '@vitest/browser-playwright': 5.0.0
+      '@vitest/browser-preview': 5.0.0
+      '@vitest/browser-webdriverio': ^5.0.0-beta.5 || >=5.0.0
+      '@vitest/coverage-istanbul': 5.0.0
+      '@vitest/coverage-v8': 5.0.0
+      '@vitest/ui': 5.0.0
       happy-dom: '*'
       jsdom: '*'
-      vite: ^6.0.0 || ^7.0.0 || ^8.0.0
+      vite: ^6.4.0 || ^7.0.0 || ^8.0.0
     peerDependenciesMeta:
       '@edge-runtime/vm':
         optional: true
@@ -16327,25 +16297,19 @@ packages:
       jsdom:
         optional: true
     dependencies:
+      '@types/chai': 5.2.3
       '@types/node': 24.12.0
-      '@vitest/expect': 4.1.11
-      '@vitest/mocker': 4.1.11(vite@6.4.3)
-      '@vitest/pretty-format': 4.1.11
-      '@vitest/runner': 4.1.11
-      '@vitest/snapshot': 4.1.11
-      '@vitest/spy': 4.1.11
-      '@vitest/utils': 4.1.11
+      '@vitest/mocker': 5.0.0(vite@6.4.3)
+      chai: 6.2.2
       es-module-lexer: 2.3.2
       expect-type: 1.4.0
-      magic-string: 0.30.21
+      magic-string: 1.3.2
       obug: 2.1.4
-      pathe: 2.0.3
       picomatch: 4.0.7
-      std-env: 4.0.0
-      tinybench: 2.9.0
-      tinyexec: 1.3.1
+      std-env: 4.2.0
+      tinybench: 6.1.4
+      tinyexec: 1.3.0
       tinyglobby: 0.2.17
-      tinyrainbow: 3.1.1
       vite: 6.4.3(@types/node@24.12.0)
       why-is-node-running: 2.3.0
     transitivePeerDependencies:
@@ -16428,7 +16392,7 @@ packages:
       espree: 9.6.1
       esquery: 1.5.0
       lodash: 4.17.21
-      semver: 7.7.4
+      semver: 7.8.5
     transitivePeerDependencies:
       - supports-color
     dev: true
